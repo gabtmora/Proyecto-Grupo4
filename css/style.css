@@ -1,61 +1,27 @@
-body
-{
-	background-color: #ffff6f1;
-	font-family: "Helvetica",Arial;
+*{
+	margin:0px;
+	padding: 0px;
 }
-#contenido
-{
-	width: 960px;
-	margin: 0 auto;
+body{
+	color: #4c4c4c;
+	font-family: 'Asap', sans-serif;
+	font
+}
+label{
+	margin-top: 6px;
+}
+.ibody{
+	background-color: #ecf0f3;
+	margin: 30px auto;
+	width: 500px;
+}
+.jumbotrom{
+	padding: 
+}
+.jumbotrom h1{
+	font-size: 36px;
 	text-align: center;
 }
-h1
-{
-	color: #e44e2d;
-}
-
-#texto
-{
-	width: 500px;
-	height:400px;
-	background-color: #1d1d1d;
-	color: #fff;
-	margin: 0 auto;
-	text-align: left;
-	border-radius: 20px;
-	padding: 20px;
-	box-shadow: 0px 0px 20px rgba(0,0,0,5);
-}
-label
-{
-	display: block;
-}
-#btnenviar
-{
-	border: none;
-	background-color: #fff;
-	color: #e44e2d;
-	padding: 4px;
-	margin: 20px;
-	cursor: pointer;
-
-
-}
-#calificacion
-{	
-	width:150px
-	-webkit-appearance:none;
-	background-color:#FFF;
-	height:20px;
-	border-radius:5px;
-	cursor:pointer;
-}
-#calificacion::-webkit-slider-thumb
-{	
-	-webkit-appearance:none;
-	background-color:#e44e2d;
-	border-radius:10px;
-	height:15px;
-	width:10px;
-
+.fcontacto{
+	padding: 14px;
 }
