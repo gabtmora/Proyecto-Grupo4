@@ -7,7 +7,7 @@ $secundario:#dc3d3d;
 html {
     font-size: 15px;
 }
-body {
+.body {
     font-family: 'Open Sans', sans-serif;
      color: #fff;
 }
@@ -27,7 +27,7 @@ body {
     transition: all .5s ease;
 }
 .encabezado.fondo-menu {
-    background: #064e4e;
+    background: #8e4242;
     padding: 1rem 0;
 }
 .encabezado .container {
@@ -314,39 +314,45 @@ SECCION PIE DE PAGINA
     text-decoration: none;
     z-index: 99999;
     line-height: 0;
-    display: none;
+    
     transition: all .5s ease;
 }
 .ir-arriba:hover,
 .ir-arriba:focus {
     outline: 0;
     text-decoration: none;
-    color: #fff;
+    color: $secundario;
 }
 /*-------------------------------------------
 ESTILOS PAGINA NOSOTROS
 --------------------------------------------*/
 
+.paginas-internas .body {
+      color:$texto;
+}
 .paginas-internas .bienvenidos {
     height: 50vh;
+  
 }
 .paginas-internas .ruta {
-    background: $principal;
+   background: #12AFAF;
     color: #fff;
 }
 .paginas-internas .ruta a {
     color: #fff;
     text-decoration: underline;
+    
 }
 .paginas-internas .ruta a:hover {
     text-decoration: none
+   
 }
 .paginas-internas .panel .panel-heading {
     font-size: 1.2rem;
 }
 .paginas-internas .panel .panel-heading a {
     background: $principal;
-    color: #fff;
+    color: black;
     display: block;
     padding: 1rem;
     border-radius: 5px;
@@ -357,6 +363,18 @@ ESTILOS PAGINA NOSOTROS
     background: $secundario;
     color: #fff;
 }
+ .advantages {
+	  background: url(../images/nosotros_fondo.svg) no-repeat center top;
+	  background-size: cover
+	  
+    }
+.our-advantages-grids:nth-child(2) {
+	  margin: 2em 0 0;
+	}
+.our-advantages-grd-left {
+	  float: left;
+	  width: 11%;
+	}
 /*-------------------------------------------
 ESTILOS PAGINA SERVICIOS
 --------------------------------------------*/
@@ -385,6 +403,7 @@ ESTILOS PAGINA SERVICIOS
 /*---------------------------------------------
 EMPIEZAN LAS MEDIAS QUERIES
 --------------------------------------------*/
+
 
 @media (min-width: 768px) {
     #menu-principal {
@@ -514,4 +533,12 @@ EMPIEZAN LAS MEDIAS QUERIES
         background: url("../images/fondo-servicios-grande.jpg") no-repeat center center;
         background-size: cover
     }
+    
+    .advantages {
+	  background: url(../images/nosotros_fondo.svg) no-repeat center top;
+	  background-size: cover
+	  
+    }
+    
+    
 }
