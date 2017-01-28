@@ -1,6 +1,6 @@
 <?php
 
-class cliente
+class pedido
 {
     private $id_usuario;
     private $id_cliente;

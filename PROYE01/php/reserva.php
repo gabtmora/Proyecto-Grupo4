@@ -1,5 +1,5 @@
 <?php
-class cliente
+class reserva
 {
     private $id_reserva;
     private $id_restaurante;

@@ -11,10 +11,7 @@ class cliente
     private $estado ;
     
      function __construct($id_cliente, $RUC,$razon_social,$tipo_cliente,$direccion,$telefono,$estado) {
-       $this->idDemo = $idDemo;
-       $this->nombre = $nombre;
-         
-         
+           
         $this-> id_cliente    = $id_cliente;
         $this-> RUC           = $RUC;
         $this-> razon_social  = $razon_social;
