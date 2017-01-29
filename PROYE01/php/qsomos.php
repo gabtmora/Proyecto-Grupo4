@@ -43,10 +43,10 @@
 					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
                             <li class="hvr-bounce-to-bottom"><a href="../index.html">Inicio</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="qsomos.html">Quienes Somos</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="menu.html">Menú Semanal</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="hAtencion.html">Horario de Atención</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="contact.html">Contactenos</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="qsomos.php">Quienes Somos</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/menu.php">Menú Semanal</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/hAtencion.php">Horario de Atención</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/contact.php">Contactenos</a></li>
                             <li ><a href="login.html">Ingreso></li>
 						</ul>
 					</div><!-- /navbar-collapse -->
