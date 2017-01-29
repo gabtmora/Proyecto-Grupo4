@@ -42,12 +42,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="../index.html">Inicio</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="qsomos.html">Quienes Somos</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="menu.html">Menú Semanal</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="hAtencion.html">Horarios de Atención</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="contact.html">Contactenos</a></li>
-                            <li ><a href="login.html">Ingreso></li>
+							<li class="hvr-bounce-to-bottom"><a href="../index.php">Inicio </a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/qsomos.php">Quienes Somos</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="php/menu.php">Menú Semanal</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/hAtencion.php">Horarios de Atención</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/contact.php">Contactenos</a></li>
+                           
 						</ul>
 					</div><!-- /navbar-collapse -->
 				</nav>
