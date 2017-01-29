@@ -40,13 +40,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="../index.html">Inicio</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="qsomos.html">Quienes Somos</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="menu.html">Menú Semanal</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="hAtencion.html">Horarios de Atención</a></li>
-							<li class="hvr-bounce-to-bottom active"><a href="contact.html">Contactenos</a></li>
-                            <li ><a href="login.html">Ingreso></li>
-						</ul>
+							<li class="hvr-bounce-to-bottom"><a href="../index.php">Inicio</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/qsomos.php">Quienes Somos</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/menu.php">Menú Semanal</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="php/hAtencion.php">Horarios de Atención</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="php/contact.php">Contactenos </a></li>
+        				
+         				</ul>
 					</div><!-- /navbar-collapse -->
 				</nav>
 			</div>
@@ -57,10 +57,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="contact">
 		<div class="container">
 			<div class="contact-main">
-				<h3>Contact Us</h3>
+				<h3>Contactenos</h3>
 				<div class="contact-top">
 					<div class="col-md-6 contact-top-left">
-				     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31895.933132218328!2d-79.91142750893928!3d-2.156874848130323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dcedfb779c1%3A0xb753fe0dd243d97f!2sParrilladas+Cajape!5e0!3m2!1ses!2sec!4v1483932077821" width="800" height="600" style="border:0" allowfullscreen></iframe>
+				     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31895.933132218328!2d-79.91142750893928!3d-2.156874848130323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dcedfb779c1%3A0xb753fe0dd243d97f!2sProyecto+Catering!5e0!3m2!1ses!2sec!4v1483932077821" width="800" height="600" style="border:0" allowfullscreen></iframe>
 					</div>
 					<div class="col-md-6 contact-top-right">
 						<div class="contact-textarea">
@@ -69,8 +69,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input type="text" value="Número de teléfono" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Número de teléfono';}"/>
 								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"/>
 								<input type="text" value="Mensaje" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mensaje';}"/>
-								<input type="submit" value="SUBMIT" >
-								<input type="reset" value="CLEAR" >
+								<input type="submit" value="Guardar" >
+								<input type="reset" value="Limpiar" >
 							</form>
 						</div>
 					</div>
