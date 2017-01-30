@@ -94,9 +94,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <p>2016 © Catering Todos los derechos reservados</p>
             <ul class="redes-sociales">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"> </i>  </a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> </a></li>
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"> </i>  </a></li>
+                <li><a href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                <li><a href="https://plus.google.com/collections/featured"><i class="fa fa-google++" aria-hidden="true"></i> </a></li>
             </ul>
 
         </div>
