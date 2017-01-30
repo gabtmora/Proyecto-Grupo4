@@ -1,13 +1,13 @@
 <?php
 $connect = pg_connect("host=localhost port=5432 dbname=php user=postgres password=root");
 
-$login      = $_POST['usuario'];
-$contrasena = $_POST['password'];
+$login      = $_GET['usuario'];
+$contrasena = $_GET['password'];
 
 $consulta = pg_query("SELECT* FROM usuario WHERE email='{$login}' AND contrasena='{$contrasena}'");
 $total = pg_num_rows($consulta);
 
-if (empty($_POST['login']) && empty($_POST['password'])) {
+if (empty($_GET['login']) && empty($_GET['password'])) {
     echo '<script type="text/javascript">
                      alert("POR FAVOR INGRESO LOS CAMPOS");
                      window.location="../pages/login.html";
