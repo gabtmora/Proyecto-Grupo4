@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Catering | Contactenos</title>
+<title>CATERING | Contactenos</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -81,49 +81,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //contact -->
 <!--- footer --->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-grids">
-				<div class="col-md-3 footer-grid">
-					<h3>Extras</h3>
-                    <ul>
-					<li><a href="#">Misón</a></li>
-				    <li><a href="#">Visión</a></li>
-                    </ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>Post Recientes</h3>
-					<ul>
-						<li><a href="#">Plato de la Semana</a></li>
-						<li><a href="#">Delicias del Mes</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>Información</h3>
-					<ul>
-						<li><a href="#">Gerente encargado</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>Contactenos</h3>
-					<p> Catering Ecuador</p>
-					<div class="footer-grid-address">
-						<p>Tel.0989638412</p>
-						<p>Fax: 1234 5678</p>
-						<p>Email: <a class="email-link" href="mailto:catering@gmail.com">catering@gmail.com</a></p>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<div class="clear"> </div>
-	<div class="copy-right">
-		<p>Diseñado por: Darwin - Jenny - Karen - Gabriela</p>
-	</div>
+	   <footer class="piedepagina p-y-1" role="contentinfo">
+        <div class="container">
+            <p>2016 © Catering Todos los derechos reservados</p>
+            <ul class="redes-sociales">
+		<li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"> </i>  </a></li>
+                <li><a href="https://www.twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i> </a></li>
+                <li><a href="https://plus.google.com/collections/featured"><i class="fa fa-google++" aria-hidden="true"></i> </a></li>
+            </ul>
+
+        </div>
+
+    </footer>
 <!--- //footer --->
 <!-- for bootstrap working -->
-		<script src="../js/bootstrap.js"> </script>
+
+		<script src="js/bootstrap.js"> </script>
 <!-- //for bootstrap working -->
 </body>
 </html>
