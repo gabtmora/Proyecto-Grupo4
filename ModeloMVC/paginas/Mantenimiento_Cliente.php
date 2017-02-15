@@ -70,6 +70,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 foreach ($DemoCollectorObj->showmenu() as $c){
 	
 	echo ' <ul> <li><a href="'.$c->getId() .'">'.$c->get_nombre().'</a>';
+	
+	
 	echo '<div><ul>';
 	foreach ($DemoCollectorObj->showmenuitem($c->getId()) as $s){
 	

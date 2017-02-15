@@ -24,7 +24,7 @@ $UsuarioCollectorObj = new UsuarioCollector();
   
         <?php
         echo "<p>EL USUARIO SE INGRESO CORRECTAMENTE</p>";
-        $UsuarioCollectorObj->createUsuario($usuario, $clave);
+        $UsuarioCollectorObj->createmenu($usuario, $clave);
         
         ?>
         

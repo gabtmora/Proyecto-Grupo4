@@ -76,7 +76,7 @@ foreach ($DemoCollectorObj1->showmenu() as $c){
     
     
     <h1>USUARIO</h1>
-    <a href="create_Demo.php"><button>CREAR</button></a>
+    <a href="cliente_save.php"><button>Nuevo</button></a>
 
     <table>
         <tr>    
@@ -100,7 +100,7 @@ foreach ($DemoCollectorObj1->showmenu() as $c){
 	          echo "<td>" . $c->getEstado() . "</td>";
            
               echo "<td><a href='update_Demo.php'><button>Editar</button></a></td>";
-	          echo "<td><a href='delete_Demo.php?ID=". $c->getIdcliente() ."'><button>Eliminar</button></a></td>";
+	          echo "<td><a href='delete_cliente.php?id_cliente=". $c->getIdcliente() ."'><button>Eliminar</button></a></td>";
               echo "</tr>"; 
                 
         }

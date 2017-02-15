@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once("DemoCollector.php");
+
+include_once("../Demo_collecctor/DemoCollector.php");
 	$id_usuario = $_POST['id_usuario'];
 	$id_persona = $_POST['id_persona'];
 	$usuario = $_POST['usuario'];

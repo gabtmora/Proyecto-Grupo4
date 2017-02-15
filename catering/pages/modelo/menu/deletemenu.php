@@ -2,7 +2,7 @@
 session_start();
 include_once("menuCollector.php");
 
-$id = $_GET['ID'];
+$orden = $_GET['orden'];
 
 
 $DemoCollectorObj = new menuCollector();
@@ -19,10 +19,10 @@ $DemoCollectorObj = new menuCollector();
     </head>
     <body>
         <?php
-        echo "<p>Se elimino el usuario" . $id ."?</p>";
-        $DemoCollectorObj->deleteUsuario($id);
+        echo "<p>Se elimino el Menu " . $orden ."?</p>";
+        $DemoCollectorObj->deletemenu($orden);
         ?>
-        <a href="readUsuario.php"><button>VOLVER</button></a>
+        <a href="readmenu.php"><button>VOLVER</button></a>
        
   
     </body>

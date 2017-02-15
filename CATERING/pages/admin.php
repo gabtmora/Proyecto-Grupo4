@@ -81,6 +81,10 @@
                                 <a class="btnDatos" href='modelo/usuario/readUsuario.php'><button>USUARIOS</button></a>
                                 <a href="modelo/usuario/readPersona.php"><button>PERSONAS</button></a>
                                 <a href="modelo/pedido/readPedido.php"><button>PEDIDOS</button></a>
+                                <a href="modelo/Menu/readmenu.php"><button>Menu</button></a>
+                                <a href="modelo/Perfil/perfil.php"><button>Perfil</button></a>
+                                <a href="modelo/Plato/readplato.php"><button>Plato</button></a>
+                                 <a href="modelo/Plato/detallepedido.php"><button>P</button></a>
 							</div>
 	
 

@@ -23,10 +23,31 @@ class ClienteCollector extends Collector
      ## $rows = self::$db->deleteRow("DELETE FROM postgres WHERE id=$id",null);  
  
    
-    function createDemo($id_cliente, $ruc, $razon_social, $tipo_cliente, $direccion, $telefono,$estado) {
-        $rows = self::$db->insertRow("INSERT INTO postgres (id_cliente, ruc, razon_social, tipo_cliente, direccion, telefono,estado) VALUES ('$id_cliente', '$ruc', '$razon_social', '$tipo_cliente', '$direccion', '$telefono','$estado')",null);
+    function createDemo( $ruc, $razon_social, $tipo_cliente, $direccion, $telefono,$estado) {
+        $rows = self::$db->insertRow("INSERT INTO cliente ( ruc, razon_social, tipo_cliente, direccion, telefono,estado) VALUES ( '$ruc', '$razon_social', '$tipo_cliente', '$direccion', '$telefono','$estado')",null);
+        
         
     }
+    
+    function eliminarDemos($id_cliente) {
+    	$rows = self::$db->getRows("DELETE FROM cliente WHERE id_cliente=$id_cliente");
+    
+    }
+    
+    function updatedemo($id_cliente,$ruc, $razon_social, $tipo_cliente, $direccion, $telefono,$estado) {
+    	$rows = self::$db->getRows(" update  cliente
+    			                     set ruc            = $ruc,
+    			                         razon_social   = $razon_social,
+    			                         tipo_cliente   = $tipo_cliente,
+    			                         direccion      = $direccion,
+    			                         telefono       = $telefono,
+    			                         estado         = $estado
+    			                         
+    			                   FROM cliente WHERE id_cliente=$id_cliente");
+    
+    }
+    
+    
 }
 ?>
 
