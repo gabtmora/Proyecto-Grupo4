@@ -1,6 +1,9 @@
 <?php
   session_start();
 ?>
+<?php
+    $rol = $_GET['rol'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,17 +78,20 @@
 		</div>
 	</div>
     <div class="col-md-12 ">
-								<br><br>
-                                <h1>Tablas de la base de datos</h1>
-                                <h2>KAREN</h2>
-                                <a class="btnDatos" href='modelo/usuario/readUsuario.php'><button>USUARIOS</button></a>
-                                <a href="modelo/usuario/readPersona.php"><button>PERSONAS</button></a>
-                                <a href="modelo/pedido/readPedido.php"><button>PEDIDOS</button></a>
-                                <a href="modelo/Menu/readmenu.php"><button>Menu</button></a>
-                                <a href="modelo/Perfil/perfil.php"><button>Perfil</button></a>
-                                <a href="modelo/Plato/readplato.php"><button>Plato</button></a>
-                                 <a href="modelo/Plato/detallepedido.php"><button>P</button></a>
-							</div>
+        
+                                <?php
+                                if($rol == 'A'){
+                                    echo "<h1>Tablas de la base de datos</h1>
+                                        <h2>KAREN</h2>
+                                <a class='btnDatos' href='modelo/usuario/readUsuario.php?rol=$rol'><button>USUARIOS</button></a>
+                                <a href='modelo/persona/readPersona.php?rol=$rol'><button>PERSONAS</button></a>
+                                <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>";
+                                }
+                                else{
+                                    echo "<h1>SUS PEDIDOS</h1>
+                                    <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>";
+                                }
+                                ?>
 	
 
 	   <footer class="piedepagina p-y-1" role="contentinfo">

@@ -1,12 +1,20 @@
 <?php
 session_start();
-include_once("menuCollector.php");
+include_once("UsuarioCollector.php");
+include_once("../persona/PersonaCollector.php");
+include_once("../pedido/PedidoCollector.php");
 
 $id = $_GET['ID'];
 
 
-$DemoCollectorObj = new menuCollector();
+$usuarioCollectorObj = new UsuarioCollector();
+$personaCollectorObj = new PersonaCollector();
+$pedidoCollectorObj = new PedidoCollector();
 ?>
+<?php
+    $rol = $_GET['rol'];
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -19,11 +27,12 @@ $DemoCollectorObj = new menuCollector();
     </head>
     <body>
         <?php
-        echo "<p>Se elimino el usuario" . $id ."?</p>";
-        $DemoCollectorObj->deleteUsuario($id);
+        $pedidoCollectorObj->deletePedidoPorUsuario($id);
+        $personaCollectorObj->deletePersonaPorUsuario($id);
+        $usuarioCollectorObj->deleteUsuario($id);
+        $mensaje = "EL USUARIO SE ELIMINO EXITOSAMENTE";
+        print "<script>alert('$mensaje')</script>";
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readUsuario.php?rol=$rol'>";
         ?>
-        <a href="readUsuario.php"><button>VOLVER</button></a>
-       
-  
     </body>
 </html>

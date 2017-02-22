@@ -11,16 +11,14 @@ session_start();
     
     </head>
     <body>
-	<h1>LOGOUT</h1>
 	<?php
 
         if (isset($_SESSION['torres'])){
                 session_destroy();
-                echo "Se ha destruido la sesion";
-                echo "<br><a href='login.php'><button>Volver<button></a>";
+                echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
         }else{
                
-                echo "<a href='login.php'><button>Volver<button></a>";
+                echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=admin.php'>";
 
         }
 

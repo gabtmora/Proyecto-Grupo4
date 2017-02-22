@@ -1,14 +1,17 @@
 <?php
 session_start();
 include_once("UsuarioCollector.php");
-	$id_usuario = $_POST['id_usuario'];
-	/*$id_persona = $_POST['id_persona'];*/
+include_once("Usuario.php");
 	$usuario = $_POST['usuario'];
 	$clave = $_POST['clave'];
-	/*$fecha_registro = $_POST['registro'];*/
+	$estado = $_POST['estado'];
+    $rol = $_POST['rol'];
 
 
 $UsuarioCollectorObj = new UsuarioCollector();
+?>
+<?php
+    $rol = $_GET['rol'];
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +26,20 @@ $UsuarioCollectorObj = new UsuarioCollector();
     <body>
   
         <?php
-        echo "<p>EL USUARIO SE INGRESO CORRECTAMENTE</p>";
-        $UsuarioCollectorObj->createmenu($usuario, $clave);
-        
+        $roll = substr ("$rol", 0,1);
+        $estado2 = substr ("$estado", 0,1);
+        if($UsuarioCollectorObj->buscarEmail($usuario)){
+            $mensaje = "ERROR EL USUARIO YA SE ENCUENTRA REGISTRADO";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=createUsuario.php?rol=$rol'>";
+        }
+        else{
+        $UsuarioCollectorObj->createUsuario($usuario, $clave, $estado2, $roll);
+        $mensaje = "EL USUARIO SE CREO EXITOSAMENTE";
+        print "<script>alert('$mensaje')</script>";
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readUsuario.php?rol=$rol'>";
+        }
         ?>
-        
-      <a href="readUsuario.php"> <button>VOLVER</button></a>
   
     </body>
 </html>

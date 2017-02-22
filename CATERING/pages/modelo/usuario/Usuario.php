@@ -8,15 +8,19 @@ class Usuario
     private $clave;
     private $fecha_registro;
     private $estado;
+    private $rol;
 
    
-     function __construct($id_usuario, $usuario, $clave, $fecha_registro, $estado) {
+     /*function __construct($id_usuario, $usuario, $clave, $fecha_registro, $estado) {
        $this->id_usuario = $id_usuario;
        $this->usuario = $usuario;
        $this->clave = $clave;
        $this->fecha_registro = $fecha_registro;
        $this->estado = $estado;
-     }
+     }*/
+    function __construct(){
+        
+    }
     
      function setId_usuario($id_usuario){
        $this->id_usuario = $id_usuario;
@@ -50,6 +54,13 @@ class Usuario
      } 
      function getFecha_registro(){
        return $this->fecha_registro;
+     }
+    
+     function setRol($rol){
+       $this->rol = $rol;
+     } 
+     function getRol(){
+       return $this->rol;
      }
 
      function setEstado($estado){

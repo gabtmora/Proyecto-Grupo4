@@ -3,11 +3,12 @@ session_start();
 ?>
 <?php
 include_once("UsuarioCollector.php");
+
 $usuario = $_SESSION['torres'];
-$id =1;
-
 $DemoCollectorObj = new UsuarioCollector();
-
+?>
+<?php
+    $rol = $_GET['rol'];
 ?>
 
 <html>
@@ -23,36 +24,48 @@ $DemoCollectorObj = new UsuarioCollector();
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../index.html"><h2>REGISTRO DE USUARIOS</h2></a>
+    <a href="#"><h2>REGISTRO DE USUARIOS</h2></a>
   </div>
 
   <div class="register-box-body">
     <p class="login-box-msg">Ingrese sus Datos</p>
 
-    <form action="savemenu.php" method="post">
+    <?php echo "<form action='saveUsuario.php?rol=$rol' method='post'>";?>  
+        <div class="box-body">
       <div class="form-group has-feedback">
-        <input type="email" name="usuario" class="form-control" placeholder="Usuario">
+        <input type="email" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="clave" class="form-control" placeholder="Password">
+        <input type="password" name="clave" class="form-control" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password">
+        <input type="password" class="form-control" placeholder="Retype password" required>
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-      </div>
-  
-        <div class="form-group has-feedback">
-        
+      </div> 
+      <div class="form-group">
+                <label>Estado</label>
+                <select class="form-control select2" style="width: 100%;" name="estado">
+                  <option selected="selected">Activo</option>
+                  <option>Inactivo</option>
+                </select>
+              </div>  
+      <div class="form-group">
+                <label>Rol</label>
+                <select class="form-control select2" style="width: 100%;" name="rol">
+                  <option selected="selected">Administrador</option>
+                  <option>Cliente</option>
+                </select>
+              </div> 
+        <div class='box-footer'>
+            <?php echo "<a href='readUsuario.php?rol=$rol'><button type='button' class='btn btn-default'>CANCELAR</button></a>";?>
+            <?php echo "<a href='saveUsuario.php?rol=$rol'><button type='submit' class='btn btn-info pull-right'>REGISTRAR</button></a>";?>
         </div>
-        
-    
-        
-
+        </div>
     </form>
-
   </div>
+
   <!-- /.form-box -->
 </div>
 </body>

@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../index.html"><h2>CATERING</h2></a>
+    <a href="../index.php"><h2>CATERING</h2></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -35,11 +35,11 @@
 
     <form method="POST" action="validar.php">
       <div class="form-group has-feedback">
-        <input type="email" name="usuario" class="form-control" placeholder="Email">
+        <input type="email" name="usuario" class="form-control" placeholder="Email" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -58,15 +58,10 @@
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
-      <p>- OR -</p>
-      <a href="https://www.facebook.com/" target="_blank" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Ingreso usando Facebook</a>
-      <a href="https://plus.google.com/collections/featured" target="_blank" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Ingresar usando Google++</a>
-    </div>
-    <!-- /.social-auth-links -->
+
 
     <a href="#">Recordar Contraseña</a><br>
-    <a href="registro.html" class="text-center">Registrar nuevo Usuario</a>
+    <a href="modelo/persona/nuevaPersona.php" class="text-center">Registrar nuevo Usuario</a>
 
   </div>
   <!-- /.login-box-body -->

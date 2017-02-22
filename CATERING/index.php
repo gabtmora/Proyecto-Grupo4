@@ -39,16 +39,16 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-					    <a class="navbar-brand" href="index.html"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>C</span>atering</a>
+					    <a class="navbar-brand" href="index.php"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>C</span>atering</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom active"><a href="../index.php">Inicio</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="php/qsomos.php">Quienes Somos</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="php/menu.php">Menú Semanal</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="php/hAtencion.php">Horarios de Atención</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="php/contact.php">Contactenos</a></li>
+							<li class="hvr-bounce-to-bottom active"><a href="index.php">Inicio</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="pages/qsomos.php">Quienes Somos</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="pages/menu.php">Menú Semanal</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="pages/hAtencion.php">Horarios de Atención</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="pages/contact.php">Contactenos</a></li>
                             <?php
 		                      if (isset($_SESSION['torres'])){ ?>
                                     <li class=" dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

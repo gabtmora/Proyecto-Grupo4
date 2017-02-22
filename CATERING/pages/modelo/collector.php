@@ -4,8 +4,8 @@ include_once('database.php');
 // Define configuration
 define("DB_HOST", "localhost");
 define("DB_USER", "postgres");
-define("DB_PASS", "1234");
-define("DB_NAME", "proyect");
+define("DB_PASS", "postgres");
+define("DB_NAME", "proyecto");
 
 
 class Collector extends database
