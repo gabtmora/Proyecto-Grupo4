@@ -92,6 +92,5 @@ $UsuarioCollectorObj = new UsuarioCollector();
                 </form>
   </div>
   <!-- /.form-box -->
-</div>
 </body>
 </html>
