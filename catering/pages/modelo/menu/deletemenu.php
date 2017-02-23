@@ -8,6 +8,11 @@ $orden = $_GET['orden'];
 $DemoCollectorObj = new menuCollector();
 ?>
 
+<?php
+    $rol = $_GET['rol'];
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>

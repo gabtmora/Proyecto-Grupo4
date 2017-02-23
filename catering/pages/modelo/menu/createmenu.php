@@ -6,8 +6,16 @@ include_once("menuCollector.php");
 $usuario = $_SESSION['torres'];
 $id =1;
 
+include_once("../usuario/UsuarioCollector.php");
+$UsuarioCollectorObj = new UsuarioCollector();
+
 $DemoCollectorObj = new menuCollector();
 
+
+?>
+
+<?php
+    $rol = $_GET['rol'];
 ?>
 
 <html>

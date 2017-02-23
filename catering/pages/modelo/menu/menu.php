@@ -44,6 +44,11 @@ class menu
 	function gettipo_menu(){
 		return $this->tipo_menu;
 	}
+	
+	
+	function setRol($rol){
+		$this->rol = $rol;
+	}
 
 	
 }

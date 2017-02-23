@@ -2,6 +2,8 @@
 
 include_once('menu.php');
 include_once('../collector.php');
+include_once("../usuario/UsuarioCollector.php");
+
 
 class menuCollector extends collector
 {

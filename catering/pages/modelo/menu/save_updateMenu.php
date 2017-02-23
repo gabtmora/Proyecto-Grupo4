@@ -12,6 +12,10 @@ $tipo_menu = $_POST['tipo_menu'];
 $MenuCollectorObj = new menuCollector();
 ?>
 
+<?php
+    $rol = $_GET['rol'];
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

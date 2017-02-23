@@ -8,7 +8,13 @@ $id =2;
 
 $DemoCollectorObj = new menuCollector();
 
+
 ?>
+
+<?php
+    $rol = $_GET['rol'];
+?>
+
 
 <html>
 <head>

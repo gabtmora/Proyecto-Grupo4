@@ -8,6 +8,12 @@ $tipo_menu = $_POST['tipo_menu'];
 
 
 $menuCollectorObj = new menuCollector();
+
+
+?>
+
+<?php
+    $rol = $_GET['rol'];
 ?>
 
 <!DOCTYPE html>

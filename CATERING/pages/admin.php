@@ -85,7 +85,12 @@
                                         <h2>KAREN</h2>
                                 <a class='btnDatos' href='modelo/usuario/readUsuario.php?rol=$rol'><button>USUARIOS</button></a>
                                 <a href='modelo/persona/readPersona.php?rol=$rol'><button>PERSONAS</button></a>
-                                <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>";
+                                <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>
+                                 <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOSss</button></a>
+                                 
+                                    <a href='modelo/Menu/readmenu.php?rol=$rol'><button>Menu</button></a>
+                                    <a href='modelo/detallepedido/detallepedido.php?rol=$rol'><button>Registrar Pedido </button></a>
+                                    <a href='modelo/Plato/readplato.php?rol=$rol'><button>Plato</button></a>";
                                 }
                                 else{
                                     echo "<h1>SUS PEDIDOS</h1>
