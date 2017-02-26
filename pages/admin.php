@@ -30,6 +30,9 @@
 	
 <body>
 <!-- header -->
+ <?php
+		                  if (isset($_SESSION['torres'])){
+            ?>
 	<div class="header">
 		<div class="container">
 			<div class="header-nav">
@@ -110,6 +113,12 @@
         </div>
 
     </footer>
+ <?php
+                          }else{   
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=login.php'>";
+                             } 
+                        ?>
+
 <!--- //footer --->
 <!-- for bootstrap working -->
 		<script src="../js/bootstrap.js"> </script>
