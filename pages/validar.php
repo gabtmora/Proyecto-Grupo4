@@ -4,6 +4,9 @@ session_start();
 <?php
 require('modelo/usuario/Usuario.php');
 require('UsuarioCollector.php');
+    $usuarioCollector = new UsuarioCollector();
+		$email = $_POST['usuario'];
+		$clave = $_POST['password'];
 ?>
 <!DOCTYPE html>
 
@@ -11,9 +14,7 @@ require('UsuarioCollector.php');
     <head>
         <title>Login</title>
         <?php
-        $usuarioCollector = new UsuarioCollector();
-		$email = $_POST['usuario'];
-		$clave = $_POST['password'];
+    
         $usuario = $usuarioCollector->validarUsuario($email,$clave);
         if ($usuarioCollector->validarUsuario($email,$clave)){
             $_SESSION['torres']= $email;
