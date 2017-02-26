@@ -5,10 +5,7 @@ session_start();
 $rol = $_GET['rol'];
 
 include_once("menuCollector.php");
-
-$id =2;
-
-$DemoCollectorObj = new menuCollector();
+$menuCollectorObj = new menuCollector();
 
 ?>
 
@@ -26,7 +23,7 @@ $DemoCollectorObj = new menuCollector();
         <h1>Administrador</h1>
         <div class="usuario">
         <?php
-	    echo "<p>Hola" . $_SESSION['torres'] . "</p>";
+	    echo "<p>Hola " . $_SESSION['torres'] . "</p>";
 		    
         ?>
         </div>
@@ -34,41 +31,31 @@ $DemoCollectorObj = new menuCollector();
     
     
     <h1>Menus</h1>
-    <a href="createmenu.php"><button>CREAR</button></a>
-
+    <?php
+        echo "<a href='createmenu.php?rol=$rol'><button>CREAR</button></a>";
+    ?>
     <table class="rwd-table">
         <tr>    
-            <th>Orden</th>
+            <th>ID</th>
             <th>Nombre</th>
-            <th>estado</th>
-            <th>tipoMenu</th>
-              
+            <th>estado</th>      
             
         </tr>
   
         <?php
-            foreach ($DemoCollectorObj->showmenus() as $c){
+            foreach ($menuCollectorObj->showmenus() as $c){
             echo "<tr>";
-            echo "<td>" . $c->getorden() . "</td>";                       
-	    echo "<td>" . $c->getnombre() . "</td>";   
-	    echo "<td>" . $c->getestado() . "</td>";
-	    
-	    echo "<td>" . $c->gettipo_menu() . "</td>";  
-        echo "<td><a href='updatemenu.php?orden=". $c->getorden() ." & nombre=". $c->getnombre() ." & estado=". $c->getestado() . " & tipo_menu=". $c->gettipo_menu(). "'><button>Editar</button></a></td>";    
-	    echo "<td><a href='deletemenu.php?orden=". $c->getorden() ."'><button>Eliminar</button></a></td>";
-
-            echo "</tr>"; 
-            
-                
+            echo "<td>" . $c->getId() . "</td>";                      
+            echo "<td>" . $c->getnombre() . "</td>";   
+            echo "<td>" . $c->getestado() . "</td>"; 
+            echo "<td><a href='updatemenu.php?ID=". $c->getId() ." & rol=$rol & descripcion=". $c->getnombre() ." & estado=". $c->getestado() . " '><button>Editar</button></a></td>";    
+            echo "<td><a href='deletemenu.php?ID=". $c->getId() ." & rol=$rol'><button>Eliminar</button></a></td>";
+            echo "</tr>";      
         }
-  	    echo "<a href='../../logout.php'><button>SALIR</button></a>";
-
+  	     echo "<a href='../../admin.php?rol=$rol'><button>SALIR</button></a>";
         ?>
-
+        
     </table>
-
-   
- 
 </body>
 </html>
 

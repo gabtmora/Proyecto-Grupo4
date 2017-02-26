@@ -4,7 +4,6 @@ session_start();
 <?php
 include_once("UsuarioCollector.php");
 $usuario = $_SESSION['torres'];
-
 $id_usuario = $_GET['id_usuario'];
 $usuario = $_GET['usuario'];
 $clave = $_GET['clave'];
@@ -35,7 +34,7 @@ $UsuarioCollectorObj = new UsuarioCollector();
   <div class="register-box-body">
     <p class="login-box-msg">Ingrese sus Datos</p>
 
-    <?php echo "<form class='form-horizontal' method='post' action='save_updateUsuario.php?rol=$rol'>";?>  
+    <?php echo "<form class='form-horizontal' method='post' action='save_updateUsuario.php?rol=$rol & usuario=$usuario'>";?>  
                       <?php
                         echo "<div class='box-body'>
                                     <div class='form-group'>
@@ -46,9 +45,9 @@ $UsuarioCollectorObj = new UsuarioCollector();
                                     </div>
                                     
                                     <div class='form-group'>
-                                        <label for='inputEmail3' class='col-sm-2 control-label'>Usuario</label>
+                                        <label class='col-sm-2 control-label'>Usuario</label>
                                         <div class='col-sm-10'>
-                                            <input class='form-control' id='inputEmail3' type='text' name='usuario' value='". $usuario ."'>
+                                            <input class='form-control' type='text' name='usuarioModificado' value='".$usuario."'>
                                         </div>
                                     </div>
                                     

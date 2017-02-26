@@ -1,12 +1,10 @@
-
 <?php
-include_once("menuCollector.php");
-$usuario = $_SESSION['torres'];
-$id =1;
-
 session_start();
+?>
+<?php
+$rol = $_GET['rol'];
+include_once("menuCollector.php");
 $DemoCollectorObj = new menuCollector();
-
 ?>
 
 <html>
@@ -22,53 +20,28 @@ $DemoCollectorObj = new menuCollector();
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../index.html"><h2>REGISTRO DE MENUS</h2></a>
+    <a href="#"><h2>REGISTRO DE MENUS</h2></a>
   </div>
 
   <div class="register-box-body">
     <p class="login-box-msg">Ingrese datos del menu</p>
 
-    <form action="savemenu.php" method="post">
+     <?php echo "<form action='savemenu.php?rol=$rol' method='post'>";?>  
       <div class="form-group has-feedback">
-        <input  name="orden" class="form-control" placeholder="orden">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input  name="nombre" class="form-control" placeholder="nombre">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
-        <div class="form-group has-feedback">
-        <input type="text" name ="tipo_menu"  placeholder="tipo de menu">
-        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-      </div>
-       <div class="checkbox icheck">
-            <label>
-              <input name ="estado" value="true" type="radio"> Activo
-              <input name ="estado" value="false" type="radio"> Desactivo
-            </label>
-          </div>
-          
-  
-        <div class="form-group has-feedback">
-        
+        <input type="text" name="descripcion" class="form-control" placeholder="Descripcion" required="required">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div> 
+      <div class="form-group">
+            <label>Estado</label>
+            <select class="form-control select2" style="width: 100%;" name="estado">
+                  <option selected="selected">Activo</option>
+                  <option>Inactivo</option>
+            </select>
+      </div> 
+      <div class='box-footer'>
+            <?php echo "<a href='readmenu.php?rol=$rol'><button type='button' class='btn btn-default'>CANCELAR</button></a>";?>
+            <?php echo "<a href='savemenu.php?rol=$rol'><button type='submit' class='btn btn-info pull-right'>REGISTRAR</button></a>";?>
         </div>
-   
-        
-      <div class="row">
-        <div class="col-xs-8">
-       
-        </div>
-        <!-- /.col -->
-        <div >
-                      
-             <td width="148"><div align="center">
-          <input type="submit" value="Guardar" class="btn btn-primary btn-block btn-flat" />
-        </div></td>
-           
-           
-        </div>
-        <!-- /.col -->
-      </div>
     </form>
 
     

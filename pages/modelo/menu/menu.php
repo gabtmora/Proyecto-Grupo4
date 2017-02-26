@@ -2,7 +2,7 @@
 
 class menu
 {
-	private $orden;
+	private $id;
 	private $nombre;
 	private $estado;
 	private $tipo_menu;
@@ -10,19 +10,18 @@ class menu
 
 	
 	 
-	function __construct($orden, $nombre, $estado, $tipo_menu) {
-		$this->orden = $orden;
+	function __construct($id, $nombre, $estado) {
+		$this->id = $id;
 		$this->nombre = $nombre;
 		$this->estado = $estado;
-		$this->tipo_menu = $tipo_menu;
 		
 	}
 
-	function setId_orden($orden){
-		$this->orden = $orden;
+	function setId($orden){
+		$this->orden = $id;
 	}
-	function getorden(){
-		return $this->orden;
+	function getId(){
+		return $this->id;
 	}
 	function setnombre($nombre){
 		$this->nombre = $nombre;

@@ -47,7 +47,7 @@
 							<li class="hvr-bounce-to-bottom"><a href="menu.php">Menú Semanal</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="hAtencion.php">Horario de Atención</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="contact.php">Contactenos</a></li>
-                            <li ><a href="login.php">Ingreso></li>
+                           
 						</ul>
 					</div><!-- /navbar-collapse -->
 				</nav>

@@ -69,7 +69,24 @@ class UsuarioCollector extends collector
       return 1;
     }
     return 0;          
-  }     
+  }
+    
+  function retornaEmail($email) {
+    $rows = self::$db->getRows("SELECT * FROM usuario WHERE usuario='$email'");               
+    foreach ($rows as $c){
+      $aux = new Usuario();    
+      $aux->setId_usuario($c{'id_usuario'});
+      $aux->setUsuario($c{'usuario'}); 
+      $aux->setClave($c{'clave'});       
+      $aux->setFecha_registro($c{'fecha_registro'}); 
+      $aux->setEstado($c{'estado'}); 
+      $aux->setRol($c{'rol'});     
+      return $c{'usuario'};
+    }
+    return 0;          
+  }    
+    
+      
     
       
     

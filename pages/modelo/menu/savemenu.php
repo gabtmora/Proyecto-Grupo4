@@ -1,13 +1,14 @@
 <?php
 session_start();
+?>
+<?php
 include_once("menuCollector.php");
-$orden = $_POST['orden'];
-$nombre =  $_POST['nombre'];
+$nombre =  $_POST['descripcion'];
 $estado = $_POST['estado'];
-$tipo_menu = $_POST['tipo_menu'];
-
-
 $menuCollectorObj = new menuCollector();
+?>
+<?php
+    $rol = $_GET['rol'];
 ?>
 
 <!DOCTYPE html>
@@ -20,15 +21,20 @@ $menuCollectorObj = new menuCollector();
     
     </head>
     <body>
-  
-        <?php
-        echo "<p> Su menu ha Ingresado  CORRECTAMENTE</p>";
-        echo 
-        $menuCollectorObj->createmenu($orden, $nombre,$estado,$tipo_menu);
-        
+  <?php
+        $estado2 = substr("$estado", 0,1);
+        if($menuCollectorObj->buscarMenu($nombre)){
+            $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=createmenu.php?rol=$rol'>";
+        }
+        else{
+        $menuCollectorObj->createmenu($nombre, $estado2);
+        $mensaje = "EL MENU SE CREO EXITOSAMENTE";
+        print "<script>alert('$mensaje')</script>";
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
+        }
         ?>
-        
-      <a href="readmenu.php"> <button>VOLVER</button></a>
   
     </body>
 </html>

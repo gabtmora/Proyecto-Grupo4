@@ -11,34 +11,35 @@ class menuCollector extends collector
     ##echo "linea 1";
     $arraymenu= array();        
     foreach ($rows as $c){
-      $aux = new menu($c{'orden'},$c{'nombre'},$c{'estado'},$c{'tipo_menu'});
-      
-
-      
+      $aux = new menu($c{'id'},$c{'nombre'},$c{'estado'});
       array_push($arraymenu, $aux);
     }
     return $arraymenu;        
   }
     
-    function createmenu($orden,$nombre,$estado,$tipo_menu) {
-        $rows = self::$db->insertRow("INSERT INTO menu (orden, nombre,estado,tipo_menu) VALUES ('$orden', '$nombre',$estado,'$tipo_menu')",null);
+  function buscarMenu($menu) {
+    $rows = self::$db->getRows("SELECT * FROM menu WHERE nombre='$menu'");               
+    foreach ($rows as $c){    
+      return 1;
+    }
+    return 0;          
+  }
+    
+    
+    function createmenu($nombre,$estado) {
+        $rows = self::$db->insertRow("INSERT INTO menu (nombre,estado) VALUES ('$nombre','$estado')",null);
         
     }
     
-    function updatemenu($orden,$nombre,$estado,$tipo_menu) {
-        $rows = self::$db->updateRow("UPDATE menu SET orden='$orden',
-        nombre='$nombre', estado='$estado' ,tipo_menu=' $tipo_menu ' WHERE orden='$orden'",null);
-        
+    function updatemenu($id,$nombre,$estado) {
+        $rows = self::$db->updateRow("UPDATE menu SET id='$id',
+        nombre='$nombre', estado='$estado' WHERE id='$id'",null);
     }
     
-     function deletemenu($orden) {
-         $rows = self::$db->deleteRow("DELETE FROM menu WHERE orden ='$orden'",null);
+     function deletemenu($ID) {
+         $rows = self::$db->deleteRow("DELETE FROM menu WHERE id ='$ID'",null);
          
-   
-   }
-   
-    
-    
+   }  
   
  }
 ?>

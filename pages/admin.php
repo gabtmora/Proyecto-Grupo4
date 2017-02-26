@@ -82,7 +82,7 @@
                                 <?php
                                 if($rol == 'A'){
                                     echo "<h1>Tablas de la base de datos</h1>
-                                        <h2>KAREN</h2>
+                                       
                                 <a class='btnDatos' href='modelo/usuario/readUsuario.php?rol=$rol'><button>USUARIOS</button></a>
                                 <a href='modelo/persona/readPersona.php?rol=$rol'><button>PERSONAS</button></a>
                                 <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>

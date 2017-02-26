@@ -30,8 +30,8 @@ $personaCollectorObj = new PersonaCollector();
     <body>
   
         <?php
-        $personaCollectorObj->createPersona($usuario,$clave,$cedula,$nombre,$apellidos,$edad,$telefono,$email,$direccion);
         if($llamado == "readPersona"){
+            $personaCollectorObj->createPersona($usuario,$clave,$cedula,$nombre,$apellidos,$edad,$telefono,$email,$direccion);
             $mensaje = "LA PERSONA SE INGRESO EXITOSAMENTE";
             print "<script>alert('$mensaje')</script>";
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php?rol=$rol'>";
@@ -43,6 +43,7 @@ $personaCollectorObj = new PersonaCollector();
                 echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=nuevaPersona.php'>";
             }
             else{
+                $personaCollectorObj->createPersona($usuario,$clave,$cedula,$nombre,$apellidos,$edad,$telefono,$email,$direccion);
                 $mensaje = "REGISTRO EXITOSO, POR FAVOR INICIE SESION";
                 print "<script>alert('$mensaje')</script>";
                 echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";

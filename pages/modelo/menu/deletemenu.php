@@ -1,11 +1,13 @@
 <?php
 session_start();
+?>
+<?php
 include_once("menuCollector.php");
-
-$orden = $_GET['orden'];
-
-
-$DemoCollectorObj = new menuCollector();
+$ID = $_GET['ID'];
+$menuCollectorObj = new menuCollector();
+?>
+<?php
+$rol = $_GET['rol'];
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +21,11 @@ $DemoCollectorObj = new menuCollector();
     </head>
     <body>
         <?php
-        echo "<p>Se elimino el Menu " . $orden ."?</p>";
-        $DemoCollectorObj->deletemenu($orden);
+        $menuCollectorObj->deletemenu($ID);
+        $mensaje = "EL MENU SE ELIMINO EXITOSAMENTE";
+        print "<script>alert('$mensaje')</script>";
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>"; 
         ?>
-        <a href="readmenu.php"><button>VOLVER</button></a>
        
   
     </body>

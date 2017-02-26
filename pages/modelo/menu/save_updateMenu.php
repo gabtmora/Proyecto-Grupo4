@@ -1,15 +1,16 @@
 <?php
 session_start();
+?>
+<?php
 include_once("menuCollector.php");
-
-
-$orden = $_POST['orden'];
-$nombre = $_POST['nombre'];
+$ID = $_POST['ID'];
+$descripcionModificada = $_POST['descripcionModificada'];
 $estado = $_POST['estado'];
-$tipo_menu = $_POST['tipo_menu'];
-
-
-$MenuCollectorObj = new menuCollector();
+$menuCollectorObj = new menuCollector();
+?>
+<?php
+    $rol = $_GET['rol'];
+    $descripcion = $_GET['descripcion'];
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +24,26 @@ $MenuCollectorObj = new menuCollector();
     </head>
     <body>
         <?php
-        echo "<p>EL Menu  SE MODIFICO EXITOSAMENTE</p>";
-        $MenuCollectorObj->updatemenu($orden,$nombre,$estado,$tipo_menu);
+        $estado2 = substr ("$estado", 0,1);
+        if(trim($descripcion) == trim($descripcionModificada)){
+            $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
+            $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
+        }
+        else{
+            if($menuCollectorObj->buscarMenu($descripcionModificada)){
+            $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=updatemenu.php?ID=$ID & descripcion=$descripcion & estado=$estado & rol=$rol'>";
+            }
+            else{
+                 $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
+            $mensaje = "EL USUARIO SE MODIFICO EXITOSAMENTE";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
+            }
+        }
         ?>
-        <a href="readmenu.php"><button>VOLVER</button></a>
-       
-  
     </body>
 </html>
