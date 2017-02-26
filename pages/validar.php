@@ -22,7 +22,7 @@ require('UsuarioCollector.php');
         }
         if (!isset($_SESSION['torres'])){
    ?>
-             $mensaje = "EL USUARIO NO SE ENCUENTRA REGISTRADO";
+             $mensaje = "EL USUARIO NO SE ENCUENTRA REGISTRADO----";
             print "<script>alert('$mensaje')</script>";
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=login.php'>";
 <?php
