@@ -87,7 +87,7 @@
                                 <a href='modelo/persona/readPersona.php?rol=$rol'><button>PERSONAS</button></a>
                                 <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>
                                  
-                                    <a href='modelo/Menu/readmenu.php?rol=$rol'><button>Menu</button></a>
+                                    <a href='modelo/menu/readmenu.php?rol=$rol'><button>Menu</button></a>
                                     <a href='modelo/detallepedido/detallepedido.php?rol=$rol'><button>Registrar Pedido </button></a>
                                     <a href='modelo/Plato/readplato.php?rol=$rol'><button>Plato</button></a>";
                                 }
