@@ -12,7 +12,10 @@ require('UsuarioCollector.php');
 
 <html>
     <head>
-        <title>Login</title>
+<title>Login</title>
+  </head>
+    <body>
+        
         <?php
     
         $usuario = $usuarioCollector->validarUsuario($email,$clave);
@@ -22,16 +25,17 @@ require('UsuarioCollector.php');
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=admin.php?rol=$rol'>";
         }
         if (!isset($_SESSION['torres'])){
-   ?>
-             $mensaje = "EL USUARIO NO SE ENCUENTRA REGISTRADO----";
+ $mensaje = "EL USUARIO NO SE ENCUENTRA REGISTRADO----";
             print "<script>alert('$mensaje')</script>";
+   ?>
+            
             <meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=login.php'>
 <?php
         }
 	   ?>
             
-    </head>
-    <body>
+  
+
 	
     </body>
 </html>
