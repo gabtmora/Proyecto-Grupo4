@@ -18,9 +18,7 @@ $PedidoCollectorObj = new PedidoCollector();
 </head>
 <body>
     <header>
-	    <?php
-		                  if (isset($_SESSION['torres'])){
-            ?>
+	   
         <h1>Administrador</h1>
         <div class="pedido">
         <?php
@@ -63,11 +61,7 @@ echo "<a href='../../admin.php?rol=$rol'><button>SALIR</button></a>";
         ?>
 
     </table>
-<?php
-                          }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=login.php'>";
-                             } 
-                        ?>
+
    
  
 </body>
