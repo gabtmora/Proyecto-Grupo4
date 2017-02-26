@@ -3,8 +3,8 @@ session_start();
 ?>
 <?php
 include_once("menuCollector.php");
-$nombre =  $_POST['descripcion'];
-$estado = $_POST['estado'];
+$ID_menu =  $_POST['menu'];
+$descripcion =  $_POST['descripcion'];
 $menuCollectorObj = new menuCollector();
 ?>
 <?php

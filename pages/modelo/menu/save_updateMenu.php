@@ -39,7 +39,7 @@ $menuCollectorObj = new menuCollector();
             }
             else{
                  $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
-            $mensaje = "EL USUARIO SE MODIFICO EXITOSAMENTE";
+            $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
             print "<script>alert('$mensaje')</script>";
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
             }

@@ -18,6 +18,7 @@ $PedidoCollectorObj = new PedidoCollector();
 </head>
 <body>
     <header>
+        <h1>Administrador</h1>
         <div class="pedido">
         <?php
 	    echo "<p>Hola " . $_SESSION['torres'] . "</p>";
