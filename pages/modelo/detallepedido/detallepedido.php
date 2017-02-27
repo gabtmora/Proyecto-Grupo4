@@ -22,6 +22,9 @@ $rol = $_GET['rol'];
           
 </head>
 <body>
+ <?php
+		  if (isset($_SESSION['torees'])){
+    ?>
     <header>
         <h1>Administrador</h1>
         <div class="usuario">
@@ -315,5 +318,10 @@ $rol = $_GET['rol'];
             <div class="mensajes centrar-div"><?php echo $mensaje;?></div>
 		
 	</div>
+<?php
+                          }else{   
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
+                             } 
+                        ?>
 </body>
 </html>
