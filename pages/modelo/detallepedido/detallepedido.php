@@ -197,8 +197,9 @@ $DemoCollectorObj = new detalleCollector();
                         $mensaje="<div class='error'>No ha ingresado su busqueda</div>";
                     }else{
                     	//$busqueda=limpiar($con,$busqueda);
-                
+                        
                         $buscar=$DemoCollectorObj->consulta($busqueda);
+                        var_dump($buscar);
                         //var_dump($buscar);
                         $num=count($buscar);
                         //var_dump($num);
