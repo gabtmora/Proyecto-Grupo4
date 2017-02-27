@@ -202,6 +202,7 @@ $DemoCollectorObj = new detalleCollector();
                     	//$busqueda=limpiar($con,$busqueda);
                     	echo " entro a buscarggggg ";
                         $buscar=$DemoCollectorObj->consulta($busqueda);
+                        echo " paso ";
                         var_dump($buscar);
                         //var_dump($buscar);
                         $num=count($buscar);
