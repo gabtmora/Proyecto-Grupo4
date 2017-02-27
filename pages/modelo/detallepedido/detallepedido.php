@@ -204,12 +204,14 @@ $DemoCollectorObj = new detalleCollector();
                         var_dump($buscar);
                         //var_dump($buscar);
                         $num=count($buscar);
-                        //var_dump($num);
+                        var_dump($num);
                         //$num=mysqli_num_rows($buscar);
                         if($num==0){
+                        	echo "no encontro busqueda" ;
                             $mensaje="<div class='error'>No se encontro busqueda relacionada</div>";
                         }else{
-                ?>
+                        	echo "entro a buscar la tabla" ;
+                ?>          
                             <table class="tabla centrar-texto">
                                 <tr>
                                     <th>id_plato</th>
