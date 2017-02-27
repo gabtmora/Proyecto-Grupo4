@@ -192,12 +192,14 @@ $DemoCollectorObj = new detalleCollector();
                 	echo "entro a buscar";
                     $mensaje='';
                     extract($_POST);
-                
+                    
+                    vardump ($busqueda);
                     if($busqueda==''){
+                    	echo "no entro ";
                         $mensaje="<div class='error'>No ha ingresado su busqueda</div>";
                     }else{
                     	//$busqueda=limpiar($con,$busqueda);
-                        
+                    	echo " entro a buscar ";
                         $buscar=$DemoCollectorObj->consulta($busqueda);
                         var_dump($buscar);
                         //var_dump($buscar);
