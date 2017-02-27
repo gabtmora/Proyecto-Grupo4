@@ -152,8 +152,7 @@ $DemoCollectorObj = new detalleCollector();
 				<?php
 			
 				var_dump ($_GET['verCarrito']);
-				var_dump($carrito);
-				 
+			
                 if(isset($_GET['verCarrito']) && !isset($_POST['buscar']) && !isset($_POST['registrarVenta'])){//VER CARRITO
                     if(!isset($_SESSION['carrito'])){
                         $_SESSION['carrito']='';
@@ -188,8 +187,9 @@ $DemoCollectorObj = new detalleCollector();
                     }
                 }
                 
-                var_dump($_POST['buscar']);
+                var_dump(isset($_POST['buscar']));
                 if(isset($_POST['buscar'])){//BUSCAR
+                	echo "entro a buscar";
                     $mensaje='';
                     extract($_POST);
                 
