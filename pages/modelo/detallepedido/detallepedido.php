@@ -43,8 +43,7 @@ $DemoCollectorObj = new detalleCollector();
 		$fecha=date("Y/m/d");
 		$mensaje='';
 
-		include_once('detalleCollector.php');
-		$DemoCollectorObj = new detalleCollector();
+	
 	
 			$_SESSION['contador']=0;
 			?>
@@ -193,7 +192,7 @@ $DemoCollectorObj = new detalleCollector();
                     $mensaje='';
                     extract($_POST);
                     
-                    vardump ($busqueda);
+                    var_dump ($busqueda);
                     if($busqueda==''){
                     	echo "no entro ";
                         $mensaje="<div class='error'>No ha ingresado su busqueda</div>";
