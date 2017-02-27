@@ -31,7 +31,7 @@ $platoCollectorObj = new platoCollector();
   
         <?php
         
-          
+        $estado2 = substr ("$estado", 0,1);
         $dir = "../../../images"; //recuerda que debe tener permisos de escritura ;)
         $ext = array('image/jpeg', 'image/gif', 'image/png', 'image/bmp','image/svg'); //Puedes agregar más extenciones
         foreach($_FILES as $archivo) {
@@ -45,7 +45,7 @@ $platoCollectorObj = new platoCollector();
         				
         				$id_plato = "'$dir/$attachname'";
         				
-        				$platoCollectorObj->createplato($descripcion, $precio,$estado,$id_plato );
+        				$platoCollectorObj->createplato($descripcion, $precio,$estado2,$id_plato );
         			} else {
         				echo "Esto no es una imagen :(";
         			}

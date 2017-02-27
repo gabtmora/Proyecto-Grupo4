@@ -43,12 +43,13 @@ $DemoCollectorObj = new platoCollector();
           
                   
      
-       <div class="checkbox icheck">
-            <label>
-              <input name ="estado" value="true" type="radio"> Activo
-              <input name ="estado" value="false" type="radio"> Desactivo
-            </label>
-          </div>
+           <div class="form-group">
+                <label>ESTADO</label>
+                <select class="form-control select2" style="width: 100%;" name="estado">
+                  <option selected="selected">Activo</option>
+                  <option>Inactivo</option>
+                </select>
+        </div>
           
 
         <div class="form-group has-feedback">

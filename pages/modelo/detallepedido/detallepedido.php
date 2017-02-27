@@ -4,6 +4,8 @@ $rol = $_GET['rol'];
 include_once('detalleCollector.php');
 $DemoCollectorObj = new detalleCollector();
 ?>
+
+
 <!doctype html>
 
 	<head>
@@ -150,14 +152,15 @@ $DemoCollectorObj = new detalleCollector();
 				<?php
 			
 				var_dump ($_GET['verCarrito']);
+				var_dump($carrito);
 				 
                 if(isset($_GET['verCarrito']) && !isset($_POST['buscar']) && !isset($_POST['registrarVenta'])){//VER CARRITO
                     if(!isset($_SESSION['carrito'])){
                         $_SESSION['carrito']='';
                     }
-                   
+                    
                     $carrito=$_SESSION['carrito'];
-					$noCarrito=count($_SESSION['carrito']);
+					
                     if($_SESSION['carrito']!='' && $noCarrito!=0){
                         ?>	
                         <div class="tituloCarrito">Detalle de pedido</div>
@@ -184,6 +187,8 @@ $DemoCollectorObj = new detalleCollector();
                         $mensaje="<div class='mensaje'>Su carrito esta vacio</div>";
                     }
                 }
+                
+                var_dump($_POST['buscar']);
                 if(isset($_POST['buscar'])){//BUSCAR
                     $mensaje='';
                     extract($_POST);
