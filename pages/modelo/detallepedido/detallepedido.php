@@ -205,8 +205,9 @@ $DemoCollectorObj = new detalleCollector();
                         $num=count($buscar);
                         var_dump($num);
                         //$num=mysqli_num_rows($buscar);
-                        if($num==0){
+                        if($num==1){
                         	echo "no encontro busqueda" ;
+                        	var_dump($buscar);
                             $mensaje="<div class='error'>No se encontro busqueda relacionada</div>";
                         }else{
                         	echo "entro a buscar la tabla" ;
