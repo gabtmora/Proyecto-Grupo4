@@ -1,9 +1,13 @@
 <?php
 session_start();
 $rol = $_GET['rol'];
+include_once('detalleCollector.php');
+$DemoCollectorObj = new detalleCollector();
 ?>
+
+
 <!doctype html>
-<html>
+
 	<head>
 		<?php include_once('../../../css/fuente_google.html');?>
 
@@ -12,19 +16,13 @@ $rol = $_GET['rol'];
 		<title>Detalle de pedido </title>
 		<link rel="stylesheet" type="text/css" href="../../../css/main.css">
         <link rel="stylesheet" type="text/css" href="../../../css/pedido.css">
-    </head>
-    
-    <html>
-<head>
-	<meta charset="utf-8">
+        <meta charset="utf-8">
 	<title>Menu</title>
     <link rel="stylesheet" href="../../../css/estilotabla.css">
-          
-</head>
+    </head>
+    
+
 <body>
- <?php
-		  if (isset($_SESSION['torees'])){
-    ?>
     <header>
         <h1>Administrador</h1>
         <div class="usuario">
@@ -70,8 +68,7 @@ $rol = $_GET['rol'];
                                                 
                                 
                                 $producto=$DemoCollectorObj->consulta2($idProducto);
-                                //$producto=mysqli_fetch_assoc($buscar);
-                                $carrito=$_SESSION['carrito'];
+                                 $carrito=$_SESSION['carrito'];
                                 
 
                                 foreach ($producto as $c){
@@ -120,11 +117,11 @@ $rol = $_GET['rol'];
             <div class="contenedorForms borde-10 centrar-div border-box">
                 <form  action="<?php $_SERVER['PHP_SELF']?>" name="formBuscar" method="post" class="ventasFormBuscar alinear-horizontal letraTamaño-16">		
               
-                    <input type="search" name="busqueda" id="busqueda" placeholder="Ingrese el nombre o codigo del menu " class="inputBusqueda borde-5 letraTamaño-16 bordeGris1px">
+                    <input type="search" name="busqueda" id="busqueda" placeholder="Ingrese el nombre o codigo " class="inputBusqueda borde-5 letraTamaño-16 bordeGris1px">
                     <input type="submit" name="buscar" value="Buscar" class="boton inputBuscar borde-5 cursorPointer letra-negrita letraTama�o-16">
                 </form>
-                <a href='detallepedido.php? verCarrito=true' style="color:white;">
-                        <div class='botonCarrito alinear-horizontal centrar-texto borde-5 letra-negrita letraTama�o-16 border-box' class =>
+                <a href='detallepedido.php?verCarrito=true' style="color:white">
+                        
                             <?php
 								if(isset($_SESSION['carrito']) && $_SESSION['carrito']!='' && !isset($_POST['registrarVenta'])){
 									echo $_SESSION['noArticulos'];
@@ -136,33 +133,34 @@ $rol = $_GET['rol'];
 									echo "0";
 								}
 						    ?>
-                        </div>
+                       
                     </a>
                 <form action="<?php $_SERVER['PHP_SELF']?>" method="post" name="registrarVenta" id="registrarVenta" class="formRegistrarVenta alinear-horizontal">
                         <input type="submit" name="registrarVenta" id="registrarVenta"class='boton botonRegistrarVenta alinear-horizontal centrar-texto borde-5 letra-negrita cursorPointer letraTamaño-16' value="Registrar Pedido">
                 </form>
-                 <form action="updatepedido.php ?orden='ojo'" method="post" name="updatepedido" id="updatepedido" class="formRegistrarVenta alinear-horizontal">
+                 <form action="readpedido.php?" method="post" name="updatepedido" id="updatepedido" class="formRegistrarVenta alinear-horizontal">
                         <input type="submit" name="updatepedido" id="updatepedido"class='boton botonRegistrarVenta alinear-horizontal centrar-texto borde-5 letra-negrita cursorPointer letraTamaño-16' value="Update Pedido">
                       
                 </form>
 			</div><!--contenedorForms-->
             <div class="centrar-texto centrar-div">
-            	<a href="../../../pages/admin.php?rol=$rol" style="color:blue;">Menu principal</a> ||  
+            	<a href="../../../pages/admin.php?rol=$rol" style="color:blue">Menu principal</a> ||  
            
-            	<a href='logout.php' style="color:blue;">Salir</a>
+            	<a href='logout.php' style="color:blue">Salir</a>
             </div>
 			<div class="contenedorTablaResultados centrar-div">
 				<?php
 			
-			
-				
+				var_dump ($_GET['verCarrito']);
+				var_dump($carrito);
+				 
                 if(isset($_GET['verCarrito']) && !isset($_POST['buscar']) && !isset($_POST['registrarVenta'])){//VER CARRITO
                     if(!isset($_SESSION['carrito'])){
                         $_SESSION['carrito']='';
                     }
-                   
+                    
                     $carrito=$_SESSION['carrito'];
-					$noCarrito=count($_SESSION['carrito']);
+					
                     if($_SESSION['carrito']!='' && $noCarrito!=0){
                         ?>	
                         <div class="tituloCarrito">Detalle de pedido</div>
@@ -189,6 +187,8 @@ $rol = $_GET['rol'];
                         $mensaje="<div class='mensaje'>Su carrito esta vacio</div>";
                     }
                 }
+                
+                var_dump($_POST['buscar']);
                 if(isset($_POST['buscar'])){//BUSCAR
                     $mensaje='';
                     extract($_POST);
@@ -238,8 +238,7 @@ $rol = $_GET['rol'];
                                                 ?>
                                                     <form action="<?php $_SERVER['PHP_SELF']?>" method='post' name='agregar' id='agregar'>
                                                         <input type='number' name='cantidad' id='cantidad'>
-                                                </td>
-                                                <td>
+                                               
                                                         <input type='submit' name='agregar' class='agregar cursorPointer borde-5 centrar-div letra-negrita' value='Agregar'>
                                                         <input type='hidden' name='id_plato' value='<?php echo $c->getid_plato();?>'>
                                                     </form>
@@ -318,10 +317,5 @@ $rol = $_GET['rol'];
             <div class="mensajes centrar-div"><?php echo $mensaje;?></div>
 		
 	</div>
-<?php
-                          }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
-                             } 
-                        ?>
 </body>
 </html>

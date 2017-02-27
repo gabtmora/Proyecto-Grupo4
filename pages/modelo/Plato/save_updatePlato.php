@@ -28,9 +28,10 @@ $PlatoCollectorObj = new platoCollector();
     </head>
     <body>
       <?php
-        echo "<p>EL Plato  SE MODIFICO EXITOSAMENTE</p>";
+        
         $dir = "../../../images"; //recuerda que debe tener permisos de escritura ;)
         $ext = array('image/jpeg', 'image/gif', 'image/png', 'image/bmp','image/svg'); //Puedes agregar más extenciones
+        $tipo_plato  = "no se guardo imagen ";
         foreach($_FILES as $archivo) {
         	$attachtmp = $archivo['tmp_name'];
         	$attachtype = $archivo['type'];
@@ -43,17 +44,20 @@ $PlatoCollectorObj = new platoCollector();
         				$tipo_plato = "$dir/$attachname";
         				
         			
-        				$PlatoCollectorObj->updateplato($id_plato,$descripcion,$precio,$estado,$tipo_plato);
-        				echo "<p>EL Menu  SE MODIFICO EXITOSAMENTE</p>";
+        				
         				
         			} else {
+        				
         				echo "Esto no es una imagen ";
         			}
         		}
         	}
         }
         
-
+        $estado2 = substr("$estado",0,1);
+        
+        $PlatoCollectorObj->updateplato($id_plato,$descripcion,$precio,$estado,$tipo_plato);
+        echo "<p>EL Plato  SE MODIFICO EXITOSAMENTE</p>";
         ?>   
     
        

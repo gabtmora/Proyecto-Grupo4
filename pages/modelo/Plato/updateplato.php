@@ -8,25 +8,34 @@ $usuario = $_SESSION['torres'];
 $id_plato = $_GET['id_plato'];
 $descripcion = $_GET['descripcion'];
 $precio = $_GET['precio'];
-
+$bandera =$_GET['estado'];
 $tipo_plato = $_GET['tipo_plato'];
 $estado2 ="";
 $estado3 ="";
+$estado4 ="";
+$estado ="";
 
-if( $_GET['estado']=1) {
+echo  $_GET['estado'];
+
+if( $bandera=="true" ) {
 
 	$estado2 ="checked";
 	$estado = "True";
+	
 
 }
-else
+else 
+
+
 {
 
 	$estado3 ="checked";
-	$estado = "True";
+	$estado4 = "True";
+	
 
 }
-
+echo 
+$bandera;
 
 
 $MenuCollectorObj = new platoCollector();
@@ -58,13 +67,13 @@ $MenuCollectorObj = new platoCollector();
      
 
      
-    <div class="contLogin">
+    <div  >
                 <h1>MODIFICACION DE PLATOS </h1>
-                <form class="form-horizontal" method="post" action="save_updatePlato.php" enctype="multipart/form-data" >
+                <form class='form-horizontal' method="post" action="save_updatePlato.php" enctype="multipart/form-data" >
                       <?php
                       
                   
-                         
+                        echo "<label >indentificacion de plato</label>";
                          echo "<input type='text' name='id_plato' value='".  $id_plato ."' readonly>";
                          
                          echo "<br>";
@@ -84,14 +93,25 @@ $MenuCollectorObj = new platoCollector();
                         
                  
                         
-                        echo " <div class='checkbox icheck'>
+                       /*  echo " <div class='checkbox icheck'>
                         <label>
     		              		             
     		        
     		             
-                        <input name ='estado' value='".$estado."'checked = '".$estado2."' type='radio'> Activo
-                        <input name ='estado' value='".$estado."' 'checked = '".$estado3."' type='radio'> Desactivo
+                        <input name ='estado' value='".$bandera."'checked = '".$estado2."' type='radio'> Activo
+                        <input name ='estado' value='".$bandera."' 'checked = '".$estado3."' type='radio'> Desactivo
                         </label>
+                        </div>"; */
+                        
+                        echo "<br>";
+                        echo "<div class='form-group'>
+                        <label >Estado</label>
+                        <div class='col-sm-10'>
+                        <select class='form-control select2' style='width: 100%;' name='estado'>
+                        <option selected='selected'>Activo</option>
+                        <option>Inactivo</option>
+                        </select>
+                        </div>
                         </div>";
                         
                         

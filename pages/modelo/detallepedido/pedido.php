@@ -2,49 +2,79 @@
 
 class pedido
 {
-	private $orden;
-	private $nombre;
-	private $estado;
-	private $tipo_menu;
-
-
+	private $id_plato;
+	private $id_pedido;
+	private $descripcion;
+	private $cantidad;
+	private $precio;
+	private $total;
+	private $id_detalle;
 	
-	 
-	function __construct($orden, $nombre, $estado, $tipo_menu) {
-		$this->orden = $orden;
-		$this->nombre = $nombre;
-		$this->estado = $estado;
-		$this->tipo_menu = $tipo_menu;
+	function __construct($id_detalle,$id_plato , $id_pedido, $descripcion, $cantidad, $precio,$total) {
 		
+		$this->id_detalle = $id_detalle;
+		$this->id_plato = $id_plato;
+		$this->id_pedido = $id_pedido;
+		
+		$this->descripcion = $descripcion;
+		$this->cantidad = $cantidad;
+		$this->precio = $precio;
+		$this->total = $total;
+		
+	
+		
+	
+	}
+	
+	
+	function setId_id_detalle($id_detalle){
+		$this->id_detalle = $id_detalle;
+	}
+	function getid_detalle(){
+		return $this->id_detalle;
 	}
 
-	function setId_orden($orden){
-		$this->orden = $orden;
+
+	function setId_id_plato($id_plato){
+		$this->id_plato = $id_plato;
 	}
-	function getorden(){
-		return $this->orden;
+	function getid_plato(){
+		return $this->id_plato;
 	}
-	function setnombre($nombre){
-		$this->nombre = $nombre;
+	
+	
+	function setId_id_pedido($id_pedido){
+		$this->id_pedido = $id_pedido;
 	}
-	function getnombre(){
-		return $this->nombre;
+	function getid_pedido(){
+		return $this->id_pedido;
+	}
+	function setdescripcion($descripcion){
+		$this->descripcion = $descripcion;
+	}
+	function getdescripcion(){
+		return $this->descripcion;
 	}
 
-	function setestado($estado){
-		$this->estado = $estado;
+	function setcantidad($cantidad){
+		$this->cantidad = $cantidad;
 	}
-	function getestado(){
-		return $this->estado;
-	}
-
-	function settipo_menu($tipo_menu){
-		$this->tipo_menu = $tipo_menu;
-	}
-	function gettipo_menu(){
-		return $this->tipo_menu;
+	function getcantidad(){
+		return $this->cantidad;
 	}
 
+	function setprecio($precio){
+		$this->precio = $precio;
+	}
+	function getprecio(){
+		return $this->precio;
+	}
+	function settotal($total){
+		$this->total = $total;
+	}
+	function gettotal(){
+		return $this->total;
+	}
 	
 }
 

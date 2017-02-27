@@ -7,7 +7,7 @@ class platoCollector extends collector
 {
   
   function showplatos() {
-    $rows = self::$db->getRows("SELECT * FROM plato order by id_plato ");        
+    $rows = self::$db->getRows("SELECT id_plato,descripcion,precio, estado,tipo_plato FROM plato order by id_plato ");        
     ##echo "linea 1";
     $arrayplato= array();        
     foreach ($rows as $c){
@@ -22,13 +22,13 @@ class platoCollector extends collector
   }
     
     function createplato($descripcion,$precio,$estado,$tipo_plato) {
-        $rows = self::$db->insertRow("INSERT INTO plato ( descripcion,precio,estado,tipo_plato) VALUES ('$descripcion', '$precio',$estado,$tipo_plato)",null);
+        $rows = self::$db->insertRow("INSERT INTO plato ( descripcion,precio,estado,tipo_plato) VALUES ('$descripcion', '$precio','$estado',$tipo_plato)",null);
         
     }
     
     function updateplato($id_plato,$descripcion,$precio,$estado,$tipo_plato) {
     	
-    	echo $tipo_plato;
+    	echo $estado;
     	
         $rows = self::$db->updateRow("UPDATE plato SET descripcion='$descripcion',
         precio='$precio', estado='$estado' ,tipo_plato='$tipo_plato' WHERE id_plato ='$id_plato'",null);

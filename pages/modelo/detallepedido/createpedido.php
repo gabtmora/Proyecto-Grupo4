@@ -1,12 +1,11 @@
+
 <?php
-session_start();
-?>
-<?php
-include_once("platoCollector.php");
+include_once("detalleCollector.php");
 $usuario = $_SESSION['torres'];
 $id =1;
 
-$DemoCollectorObj = new platoCollector();
+session_start();
+$DemoCollectorObj = new detalleCollector();
 
 ?>
 
@@ -23,38 +22,41 @@ $DemoCollectorObj = new platoCollector();
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../index.html"><h2>REGISTRO DE PLATOS </h2></a>
+    <a href="../index.html"><h2>REGISTRO DE Pedido</h2></a>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Ingrese datos del plato</p>
+    <p class="login-box-msg">Ingrese datos del menu</p>
 
-    <form action="saveplato.php" method="post" enctype="multipart/form-data">
+
+
+
+    <form action="savepedido.php" method="post">
+  
       <div class="form-group has-feedback">
-        <input  name="descripcion" class="form-control" placeholder="descripcion">
+        <input  name="id_plato" class="form-control" placeholder="plato">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
+        <div class="form-group has-feedback">
+        <input type="text" name ="id_pedido"  placeholder="pedido">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      </div>
+        <div class="form-group has-feedback">
+        <input  name="nombre" class="form-control" placeholder="nombre">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+        <div class="form-group has-feedback">
+        <input  name="cantidad" class="form-control" placeholder="cantidad">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      
+       <div class="form-group has-feedback">
         <input  name="precio" class="form-control" placeholder="precio">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        
-         
-          <input type="file" name="imagen" id="picture" class="form-control">
-          
-                  
+      </div>
      
-           <div class="form-group">
-                <label>ESTADO</label>
-                <select class="form-control select2" style="width: 100%;" name="estado">
-                  <option selected="selected">Activo</option>
-                  <option>Inactivo</option>
-                </select>
-        </div>
-          
-
-        <div class="form-group has-feedback">
-        
-        </div>
+  
+ 
    
         
       <div class="row">

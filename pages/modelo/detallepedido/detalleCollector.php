@@ -2,6 +2,7 @@
 
 include_once('../plato/plato.php');
 include_once('../collector.php');
+include_once('pedido.php');
 
 class detalleCollector extends collector
 {
@@ -44,6 +45,21 @@ class detalleCollector extends collector
   
   }
   
+  function showmenus() {
+  	$rows = self::$db->getRows("SELECT * FROM  detalle_pedido ");
+  	##echo "linea 1";
+  	$arraymenu= array();
+  	foreach ($rows as $c){
+  		$aux = new pedido($c{'id_detalle'},$c{'id_plato'},$c{'id_pedido'},$c{'descripcion'},$c{'cantidad'},$c{'precio'},$c{'total'});
+
+  
+  
+  
+  		array_push($arraymenu, $aux);
+  	}
+  	return $arraymenu;
+  }
+  
     
     function createpedido($id_plato,$id_pedido,$descripcion,$cantidad,$precio,$total) {
         $rows = self::$db->insertRow("INSERT INTO detalle_pedido (id_plato, id_pedido,descripcion,cantidad,precio,total) VALUES ('$id_plato', '$id_pedido','$descripcion',$cantidad,$precio,$total)",null);
@@ -54,14 +70,14 @@ class detalleCollector extends collector
    
 
     
-    function updatemenu($orden,$nombre,$estado,$tipo_menu) {
-        $rows = self::$db->updateRow("UPDATE menu SET orden='$orden',
-        nombre='$nombre', estado='$estado' ,tipo_menu=' $tipo_menu ' WHERE orden='$orden'",null);
+    function updatepedido($id_detalle,$cantidad,$precio,$total2) {
+        $rows = self::$db->updateRow("UPDATE detalle_pedido SET cantidad=$cantidad,
+        precio=$precio, total=$total2  WHERE id_detalle=$id_detalle",null);
         
     }
     
-     function deletemenu($orden) {
-         $rows = self::$db->deleteRow("DELETE FROM menu WHERE orden ='$orden'",null);
+     function deletepedido($id_detalle) {
+         $rows = self::$db->deleteRow("DELETE FROM detalle_pedido WHERE id_detalle ='$id_detalle'",null);
          
    
    }
