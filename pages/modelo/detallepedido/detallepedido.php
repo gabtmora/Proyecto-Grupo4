@@ -186,6 +186,8 @@ $DemoCollectorObj = new detalleCollector();
                     }
                 }
                 
+                include_once('detalleCollector.php');
+                $DemoCollectorObj = new detalleCollector();
                 var_dump(isset($_POST['buscar']));
                 if(isset($_POST['buscar'])){//BUSCAR
                 	echo "entro a buscar";
