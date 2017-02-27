@@ -19,6 +19,9 @@ $menuCollectorObj = new menuCollector();
           
 </head>
 <body>
+<?php
+		  if (isset($_SESSION['torres'])){
+    ?>
     <header>
         <h1>Administrador</h1>
         <div class="usuario">
@@ -56,6 +59,11 @@ $menuCollectorObj = new menuCollector();
         ?>
         
     </table>
+<?php
+                          }else{   
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
+                             } 
+                        ?>
 </body>
 </html>
 
