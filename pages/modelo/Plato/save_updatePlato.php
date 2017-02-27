@@ -7,10 +7,15 @@ $descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
 $estado = $_POST['estado'];
 
+echo $estado;
+
+
+
+
+
 
 $tipo_plato ;
 
-echo $estado ;
 
 
 

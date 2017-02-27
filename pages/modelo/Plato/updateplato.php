@@ -23,7 +23,7 @@ else
 {
 
 	$estado3 ="checked";
-	$estado = "True";
+	$estado = "false";
 
 }
 
@@ -43,6 +43,11 @@ $MenuCollectorObj = new platoCollector();
     <link rel="stylesheet" href="../../../css/estilotabla.css">
     <link rel="stylesheet" href="../../../css/bootstrap.css">
     <link rel="stylesheet" href="../../../css/style2.css">
+    
+    
+    <script type="text/javascript">
+
+</script>
 </head>
 <body>
     <header>
@@ -90,7 +95,7 @@ $MenuCollectorObj = new platoCollector();
     		        
     		             
                         <input name ='estado' value='".$estado."'checked = '".$estado2."' type='radio'> Activo
-                        <input name ='estado' value='".$estado."' 'checked = '".$estado3."' type='radio'> Desactivo
+                        <input name ='estado' value='0' 'checked = '".$estado3."' type='radio'> Desactivo
                         </label>
                         </div>";
                         

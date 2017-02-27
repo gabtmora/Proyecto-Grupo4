@@ -25,10 +25,10 @@ class platoCollector extends collector
         $rows = self::$db->insertRow("INSERT INTO plato ( descripcion,precio,estado,tipo_plato) VALUES ('$descripcion', '$precio',$estado,$tipo_plato)",null);
         
     }
-    
+  
     function updateplato($id_plato,$descripcion,$precio,$estado,$tipo_plato) {
     	
-    	echo $tipo_plato;
+    	echo $estado;
     	
         $rows = self::$db->updateRow("UPDATE plato SET descripcion='$descripcion',
         precio='$precio', estado='$estado' ,tipo_plato='$tipo_plato' WHERE id_plato ='$id_plato'",null);
