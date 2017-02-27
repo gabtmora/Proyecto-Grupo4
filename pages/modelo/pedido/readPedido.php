@@ -66,7 +66,7 @@ echo "<a href='../../admin.php?rol=$rol'><button>SALIR</button></a>";
     </table>
  <?php
                           }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../login.php'>";
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
                              } 
                         ?>
    
