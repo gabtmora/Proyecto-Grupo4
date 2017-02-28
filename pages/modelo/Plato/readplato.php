@@ -3,6 +3,7 @@ session_start();
 ?>
 <?php
 include_once("platoCollector.php");
+$rol = $_GET['rol'];
 
 $id =2;
 
@@ -68,7 +69,7 @@ $DemoCollectorObj = new platoCollector();
             
                 
         }
-  	    echo "<a href='../../logout.php'><button>SALIR</button></a>";
+  	    echo "<a a href='../../admin.php?rol=$rol'><button>SALIR</button></a>";
 
         ?>
 
