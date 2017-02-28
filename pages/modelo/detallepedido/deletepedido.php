@@ -21,11 +21,13 @@ $DemoCollectorObj = new detalleCollector();
     </head>
     <body>
         <?php
-        echo "<p>Se elimino el Menu " . $id_detalle ."?</p>";
-        $DemoCollectorObj->deletepedido($id_detalle);
-        ?>
-        <a href="readpedido.php"><button>VOLVER</button></a>
        
+        $DemoCollectorObj->deletepedido($id_detalle);
+        $mensaje = "SE ELIMINO EL DETALLE PEDIDO";
+            print "<script>alert('$mensaje')</script>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readpedido.php?rol=A'>";
+        ?>
+        
   
     </body>
 </html>

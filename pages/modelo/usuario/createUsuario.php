@@ -33,7 +33,7 @@ $DemoCollectorObj = new UsuarioCollector();
     <?php echo "<form action='saveUsuario.php?rol=$rol' method='post'>";?>  
         <div class="box-body">
       <div class="form-group has-feedback">
-        <input type="email" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+        <input type="email" name="usuario" class="form-control" placeholder="Email" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -47,8 +47,8 @@ $DemoCollectorObj = new UsuarioCollector();
       <div class="form-group">
                 <label>Estado</label>
                 <select class="form-control select2" style="width: 100%;" name="estado">
-                  <option selected="selected">Activo</option>
-                  <option>Inactivo</option>
+                  <option selected="selected">A</option>
+                  <option>I</option>
                 </select>
               </div>  
       <div class="form-group">
