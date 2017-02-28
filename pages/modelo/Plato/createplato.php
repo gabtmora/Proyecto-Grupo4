@@ -38,16 +38,12 @@ $DemoCollectorObj = new platoCollector();
         <input  name="precio" class="form-control" placeholder="precio">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         
-         
-          <input type="file" name="imagen" id="picture" class="form-control">
-          
-                  
-     
+        
            <div class="form-group">
                 <label>ESTADO</label>
                 <select class="form-control select2" style="width: 100%;" name="estado">
-                  <option selected="selected">Activo</option>
-                  <option>Inactivo</option>
+                  <option selected="selected">A</option>
+                  <option>I</option>
                 </select>
         </div>
           

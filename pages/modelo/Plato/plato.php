@@ -12,12 +12,12 @@ class plato
 
 	
 	 
-	function __construct($id_plato, $descripcion, $precio, $estado,$tipo_plato) {
+	function __construct($id_plato, $descripcion, $precio, $estado) {
 	
 		$this->descripcion = $descripcion;
 		$this->precio = $precio;
 		$this->estado = $estado;
-		$this->tipo_plato = $tipo_plato;
+		
 		$this->id_plato = $id_plato;
 		
 		

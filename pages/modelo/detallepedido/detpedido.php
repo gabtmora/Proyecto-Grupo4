@@ -1,6 +1,6 @@
 <?php
 
-class pedido
+class detpedido
 {
 	private $id_plato;
 	private $id_pedido;

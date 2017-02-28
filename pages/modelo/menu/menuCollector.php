@@ -30,13 +30,13 @@ class menuCollector extends collector
     
     
     function createmenu($nombre,$estado) {
+     
         $rows = self::$db->insertRow("INSERT INTO menu (nombre,estado) VALUES ('$nombre','$estado')",null);
         
     }
     
     function updatemenu($id,$nombre,$estado) {
-        $rows = self::$db->updateRow("UPDATE menu SET id='$id',
-        nombre='$nombre', estado='$estado' WHERE id='$id'",null);
+        $rows = self::$db->updateRow("UPDATE menu SET nombre='$nombre', estado='$estado' WHERE id='$id'",null);
     }
     
      function deletemenu($ID) {

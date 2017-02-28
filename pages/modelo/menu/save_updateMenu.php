@@ -6,10 +6,11 @@ include_once("menuCollector.php");
 $ID = $_POST['ID'];
 $descripcionModificada = $_POST['descripcionModificada'];
 $estado2 = $_POST['estado'];
+
 $menuCollectorObj = new menuCollector();
 ?>
 <?php
-    $rol = $_GET['rol'];
+    $rol = 'A';
     $descripcion = $_GET['descripcion'];
 ?>
 
@@ -38,16 +39,10 @@ $menuCollectorObj = new menuCollector();
            # echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=updatemenu.php?ID=$ID & descripcion=$descripcion & estado=$estado & rol=$rol'>";
         #    }
         #    else{
-         if($estado2='Activo'){
-            $estado='A';
-        }
-        if($estado2='Inactivo'){
-             $estado='I';
-        }
-                 $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado);
+         $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
             $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
             print "<script>alert('$mensaje')</script>";
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=A'>";
          #   }
         #}
         ?>

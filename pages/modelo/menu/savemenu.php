@@ -31,13 +31,8 @@ $menuCollectorObj = new menuCollector();
            # echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=createmenu.php?rol=$rol'>";
         #}
         #else{
-       if($estado2='Activo'){
-            $estado='A';
-        }
-        if($estado2='Inactivo'){
-             $estado='I';
-        }
-        $menuCollectorObj->createmenu($descripcion, $estado);
+      
+        $menuCollectorObj->createmenu($descripcion, $estado2);
         $mensaje = "EL MENU SE CREO EXITOSAMENTE";
         print "<script>alert('$mensaje')</script>";
         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";

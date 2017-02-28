@@ -1,9 +1,6 @@
 <?php
   session_start();
 ?>
-<?php
-    $rol = $_GET['rol'];
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +22,14 @@
     <!-- Cargando iconos -->
     <link href='../css/font-awesome.min.css' rel='stylesheet' type='text/css'> 
     
-    
 </head>
 	
 <body>
 <!-- header -->
  <?php
 		                  if (isset($_SESSION['torres'])){
+                              
+$rol= $_GET['rol'];
             ?>
 	<div class="header">
 		<div class="container">
@@ -45,7 +43,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-					    <a class="navbar-brand" href="../index.html"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>C</span>atering</a>
+					    <a class="navbar-brand" href="../index.php"><i class="glyphicon glyphicon-cutlery" aria-hidden="true"></i><span>C</span>atering</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -91,7 +89,7 @@
                                 <a href='modelo/pedido/readPedido.php?rol=$rol'><button>PEDIDOS</button></a>
                                  
                                     <a href='modelo/menu/readmenu.php?rol=$rol'><button>Menu</button></a>
-                                    <a href='modelo/detallepedido/detallepedido.php?rol=$rol'><button>Registrar Pedido </button></a>
+                                    <a href='modelo/detallepedido/readpedido.php?rol=$rol'><button>Registrar Pedido </button></a>
                                     <a href='modelo/Plato/readplato.php?rol=$rol'><button>Plato</button></a>";
                                 }
                                 else{

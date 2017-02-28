@@ -19,11 +19,13 @@ $DemoCollectorObj = new platoCollector();
     </head>
     <body>
         <?php
-        echo "<p>Se elimino el Menu " . $id_plato ."?</p>";
+        
         $DemoCollectorObj->deleteplato($id_plato);
+        $mensaje = "SE ELIMINO EL PLATO";
+		print "<script>alert('$mensaje')</script>";
+		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readplato.php?rol=A'>";		
+        
         ?>
-        <a href="readplato.php"><button>VOLVER</button></a>
-       
-  
+        
     </body>
 </html>

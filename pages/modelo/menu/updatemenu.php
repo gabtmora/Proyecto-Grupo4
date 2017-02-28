@@ -51,8 +51,8 @@ $menuCollectorObj = new menuCollector();
                                         <label class='col-sm-2 control-label'>Estado</label>
                                         <div class='col-sm-10'>
                                         <select class='form-control select2' style='width: 100%;' name='estado'>
-                                            <option selected>Activo</option>
-                                            <option>Inactivo</option>
+                                            <option selected>A</option>
+                                            <option>I</option>
                                         </select>
                                         </div>
                                     </div> 

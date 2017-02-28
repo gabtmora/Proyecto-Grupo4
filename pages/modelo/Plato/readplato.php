@@ -3,7 +3,7 @@ session_start();
 ?>
 <?php
 include_once("platoCollector.php");
-$rol = $_GET['rol'];
+$rol = 'A';
 
 $id =2;
 
@@ -39,7 +39,6 @@ $DemoCollectorObj = new platoCollector();
             <th>descripcion</th>
             <th>estado</th>
             <th>precio</th>
-            <th>Imagen</th>
             <th>Editar</th>
             <th>Eliminar</th>
             
@@ -58,11 +57,7 @@ $DemoCollectorObj = new platoCollector();
 	        echo "<td>" . $c->getprecio() . "</td>";
 	    
 	    
-	    
-	    echo "<td><input type='image' name='tipo_plato' src=". $c->gettipo_plato()." /></td>";
-	    
-	    
-        echo "<td><a href='updateplato.php? id_plato=". $c->getid_plato() ." & descripcion=". $c->getdescripcion() ." & estado=". $c->getestado() ." & precio=". $c->getprecio() . " & tipo_plato=". $c->gettipo_plato(). "'><button>Editar</button></a></td>";    
+        echo "<td><a href='updateplato.php? id_plato=". $c->getid_plato() ." & descripcion=". $c->getdescripcion() ." & estado=". $c->getestado() ." & precio=". $c->getprecio() . "'><button>Editar</button></a></td>";    
 	    echo "<td><a href='deleteplato.php?id_plato=". $c->getid_plato() ."'><button>Eliminar</button></a></td>";
 
             echo "</tr>"; 

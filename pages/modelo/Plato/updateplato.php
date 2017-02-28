@@ -8,36 +8,7 @@ $usuario = $_SESSION['torres'];
 $id_plato = $_GET['id_plato'];
 $descripcion = $_GET['descripcion'];
 $precio = $_GET['precio'];
-$bandera =$_GET['estado'];
-$tipo_plato = $_GET['tipo_plato'];
-$estado2 ="";
-$estado3 ="";
-$estado4 ="";
-$estado ="";
-
-echo  $_GET['estado'];
-
-if( $bandera=="true" ) {
-
-	$estado2 ="checked";
-	$estado = "True";
-	
-
-}
-else 
-
-
-{
-
-	$estado3 ="checked";
-	$estado4 = "True";
-	
-
-}
-echo 
-$bandera;
-
-
+$estado =$_GET['estado'];
 $MenuCollectorObj = new platoCollector();
 
 
@@ -45,88 +16,84 @@ $MenuCollectorObj = new platoCollector();
 ?>
 
 <DOCTYPE html>
-<html lang ="es">
+<html>
 <head>
-    <meta charset="utf-8">
-	<title>Usuario</title>
-    <link rel="stylesheet" href="../../../css/estilotabla.css">
+	<meta charset="utf-8">
+	<title>Usuario </title>
     <link rel="stylesheet" href="../../../css/bootstrap.css">
     <link rel="stylesheet" href="../../../css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+          
 </head>
-<body>
-    <header>
-        <h1>Login</h1>
-        <div class="usuario">
-        <?php
-            echo "<p>Hola usuario <span class='nmbUser'>" . $usuario . "<span> </p>";
-            echo "<a href='read_mineral.php'><button>Salir</button></a>";
-		    
-        ?>
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="../index.html"><h2>MODIFICACION DE PLATOS </h2></a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">Ingrese datos del plato</p>
+
+    <form action="save_updatePlato.php" method="post" enctype="multipart/form-data">
+        <div class="form-group has-feedback">
+        
+<?php
+        echo "<input  name='id_plato' class='form-control' placeholder='id_plato' value=".$id_plato." readonly>";
+          ?>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+        
+      <div class="form-group has-feedback">
+        
+<?php
+        echo "<input  name='descripcion' class='form-control' placeholder='descripcion' value=".$descripcion.">";
+          ?>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+           
+<?php
+        echo "<input  name='precio' class='form-control' placeholder='precio' value=".$precio.">";
+          ?>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        
+        
+           <div class="form-group">
+                <label>ESTADO</label>
+                <select class="form-control select2" style="width: 100%;" name="estado">
+                  <option selected="selected">A</option>
+                  <option>I</option>
+                </select>
         </div>
-     </header>
-     
+          
 
-     
-    <div  >
-                <h1>MODIFICACION DE PLATOS </h1>
-                <form class='form-horizontal' method="post" action="save_updatePlato.php" enctype="multipart/form-data" >
-                      <?php
+        <div class="form-group has-feedback">
+        
+        </div>
+   
+        
+      <div class="row">
+        <div class="col-xs-8">
+       
+        </div>
+        <!-- /.col -->
+        <div >
                       
-                  
-                        echo "<label >indentificacion de plato</label>";
-                         echo "<input type='text' name='id_plato' value='".  $id_plato ."' readonly>";
-                         
-                         echo "<br>";
-                          
-                        echo "<label >descripcion</label>";
+             <td width="148"><div align="center">
+          <input type="submit" value="Guardar" class="btn btn-primary btn-block btn-flat" />
+        </div></td>
+           
+           
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
 
-                        echo "<input type='text' name='descripcion' value='".  $descripcion ."' >";
-
-                        echo "<br>";
-
-                        echo "<label >precio </label>";
-                   
-                    
-                        echo "<input type='text' name='precio' value='". $precio."'>";
-
-                        echo "<br>";
-                        
-                 
-                        
-                       /*  echo " <div class='checkbox icheck'>
-                        <label>
-    		              		             
-    		        
-    		             
-                        <input name ='estado' value='".$bandera."'checked = '".$estado2."' type='radio'> Activo
-                        <input name ='estado' value='".$bandera."' 'checked = '".$estado3."' type='radio'> Desactivo
-                        </label>
-                        </div>"; */
-                        
-                        echo "<br>";
-                        echo "<div class='form-group'>
-                        <label >Estado</label>
-                        <div class='col-sm-10'>
-                        <select class='form-control select2' style='width: 100%;' name='estado'>
-                        <option selected='selected'>Activo</option>
-                        <option>Inactivo</option>
-                        </select>
-                        </div>
-                        </div>";
-                        
-                        
-                        
-
-                        echo "<br>";
-                        echo "<input type='file' name='imagen' id='picture' class='form-control'>";
-                    ?>
-                    <br><br>
-                    <?php
-                    echo "<button type='submit'>Modificar</button>";
-                    ?>
-                </form>
-            </div>
-    </div>
     
-    </body>
+
+  </div>
+  <!-- /.form-box -->
+</div>
+</body>
 </html>
