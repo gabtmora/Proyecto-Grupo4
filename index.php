@@ -57,7 +57,7 @@
                                     ?>
                                     <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="pages/admin.php">Administrar</a></li>
+                                        <li><a href="pages/admin.php?rol=A">Administrar</a></li>
                                         <li><a href="pages/logout.php">Salir</a></li>
                                     </ul>
                                 </li>
