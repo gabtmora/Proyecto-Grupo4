@@ -3,8 +3,9 @@ session_start();
 ?>
 <?php
 include_once("menuCollector.php");
-$ID_menu =  $_POST['menu'];
+#$ID_menu =  $_POST['menu'];
 $descripcion =  $_POST['descripcion'];
+$estado2  =  $_POST['estado'];
 $menuCollectorObj = new menuCollector();
 ?>
 <?php
@@ -22,18 +23,25 @@ $menuCollectorObj = new menuCollector();
     </head>
     <body>
   <?php
-        $estado2 = substr("$estado", 0,1);
-        if($menuCollectorObj->buscarMenu($nombre)){
-            $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
-            print "<script>alert('$mensaje')</script>";
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=createmenu.php?rol=$rol'>";
+        #$estado2 = substr("$estado", 0,1);
+        #$miau=$menuCollectorObj->buscarMenu($descripcion);
+        #if($miau=0){
+         #   $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
+          #  print "<script>alert('$mensaje')</script>";
+           # echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=createmenu.php?rol=$rol'>";
+        #}
+        #else{
+       if($estado2='Activo'){
+            $estado='A';
         }
-        else{
-        $menuCollectorObj->createmenu($nombre, $estado2);
+        if($estado2='Inactivo'){
+             $estado='I';
+        }
+        $menuCollectorObj->createmenu($descripcion, $estado);
         $mensaje = "EL MENU SE CREO EXITOSAMENTE";
         print "<script>alert('$mensaje')</script>";
         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
-        }
+        
         ?>
   
     </body>

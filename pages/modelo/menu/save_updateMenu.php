@@ -5,7 +5,7 @@ session_start();
 include_once("menuCollector.php");
 $ID = $_POST['ID'];
 $descripcionModificada = $_POST['descripcionModificada'];
-$estado = $_POST['estado'];
+$estado2 = $_POST['estado'];
 $menuCollectorObj = new menuCollector();
 ?>
 <?php
@@ -24,26 +24,32 @@ $menuCollectorObj = new menuCollector();
     </head>
     <body>
         <?php
-        $estado2 = substr ("$estado", 0,1);
-        if(trim($descripcion) == trim($descripcionModificada)){
-            $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
+        #$estado2 = substr ("$estado", 0,1);
+        #if(trim($descripcion) == trim($descripcionModificada)){
+        #    $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
+        #    $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
+        #    print "<script>alert('$mensaje')</script>";
+        #    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
+        #}
+        #else{
+        #    if($menuCollectorObj->buscarMenu($descripcionModificada)){
+         #   $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
+          #  print "<script>alert('$mensaje')</script>";
+           # echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=updatemenu.php?ID=$ID & descripcion=$descripcion & estado=$estado & rol=$rol'>";
+        #    }
+        #    else{
+         if($estado2='Activo'){
+            $estado='A';
+        }
+        if($estado2='Inactivo'){
+             $estado='I';
+        }
+                 $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado);
             $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
             print "<script>alert('$mensaje')</script>";
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
-        }
-        else{
-            if($menuCollectorObj->buscarMenu($descripcionModificada)){
-            $mensaje = "ERROR EL MENU YA SE ENCUENTRA REGISTRADO";
-            print "<script>alert('$mensaje')</script>";
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=updatemenu.php?ID=$ID & descripcion=$descripcion & estado=$estado & rol=$rol'>";
-            }
-            else{
-                 $menuCollectorObj->updatemenu($ID, $descripcionModificada, $estado2);
-            $mensaje = "EL MENU SE MODIFICO EXITOSAMENTE";
-            print "<script>alert('$mensaje')</script>";
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readmenu.php?rol=$rol'>";
-            }
-        }
+         #   }
+        #}
         ?>
     </body>
 </html>

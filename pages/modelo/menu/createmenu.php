@@ -34,7 +34,7 @@ $DemoCollectorObj = new menuCollector();
       <div class="form-group">
             <label>Estado</label>
             <select class="form-control select2" style="width: 100%;" name="estado">
-                  <option selected="selected">Activo</option>
+                  <option selected>Activo</option>
                   <option>Inactivo</option>
             </select>
       </div> 

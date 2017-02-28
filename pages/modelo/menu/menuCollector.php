@@ -22,6 +22,9 @@ class menuCollector extends collector
     foreach ($rows as $c){    
       return 1;
     }
+      if($rows>0){    
+      return 2;
+    }
     return 0;          
   }
     
