@@ -31,7 +31,7 @@ class platoCollector extends collector
     	echo $estado;
     	
         $rows = self::$db->updateRow("UPDATE plato SET descripcion='$descripcion',
-        precio='$precio', estado='$estado' ,tipo_plato='$tipo_plato' WHERE id_plato ='$id_plato'",null);
+        precio=$precio, estado='$estado' ,tipo_plato='$tipo_plato' WHERE id_plato ='$id_plato'",null);
         
     }
     

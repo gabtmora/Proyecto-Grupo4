@@ -56,7 +56,7 @@ $PlatoCollectorObj = new platoCollector();
         
         $estado2 = substr("$estado",0,1);
         
-        $PlatoCollectorObj->updateplato($id_plato,$descripcion,$precio,$estado,$tipo_plato);
+        $PlatoCollectorObj->updateplato($id_plato,$descripcion,$precio,$estado2,$tipo_plato);
         echo "<p>EL Plato  SE MODIFICO EXITOSAMENTE</p>";
         ?>   
     
