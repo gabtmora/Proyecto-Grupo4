@@ -15,5 +15,5 @@ install: ./install-dependencies.sh
 before_script: true
 
 script: 
-- phpunit Test.php
+- phpunit test.php
 
