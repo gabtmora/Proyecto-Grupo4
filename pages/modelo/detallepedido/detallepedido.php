@@ -207,7 +207,7 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                         $num=count($buscar);
                         var_dump($num);
                         //$num=mysqli_num_rows($buscar);
-                        if($num==1){
+                        if($num==0){
                         	echo "no encontro busqueda" ;
                         	var_dump($buscar);
                             $mensaje="<div class='error'>No se encontro busqueda relacionada</div>";
@@ -227,7 +227,9 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                                 
                                 
                               
-                <?php             
+                <?php       
+                
+                $buscar=$_SESSION['ojo'];
                           foreach ($buscar as $c){
                                         echo "<tr>
                                                 <td>".$c->getid_plato()."</td>
