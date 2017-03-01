@@ -230,6 +230,7 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                 <?php       
                 
                 $buscar=$_SESSION['ojo'];
+                var_dump ($buscar);
                           foreach ($buscar as $c){
                                         echo "<tr>
                                                 <td>".$c->getid_plato()."</td>
