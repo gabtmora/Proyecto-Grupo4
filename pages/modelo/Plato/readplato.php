@@ -19,6 +19,9 @@ $DemoCollectorObj = new platoCollector();
           
 </head>
 <body>
+    <?php
+		  if (isset($_SESSION['torres'])){
+    ?>
     <header>
         <h1>Administrador</h1>
         <div class="usuario">
@@ -69,6 +72,11 @@ $DemoCollectorObj = new platoCollector();
         ?>
 
     </table>
+     <?php
+                          }else{   
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
+                             } 
+                        ?>
 
    
  

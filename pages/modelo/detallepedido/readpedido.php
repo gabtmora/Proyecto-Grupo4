@@ -24,6 +24,9 @@ $DemoCollectorObj = new detalleCollector;
 
 
 <body>
+    <?php
+		  if (isset($_SESSION['torres'])){
+    ?>
 
 <head>
 	<meta charset="utf-8">
@@ -85,7 +88,11 @@ $DemoCollectorObj = new detalleCollector;
 
     </table>
 
-   
+    <?php
+                          }else{   
+                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../login.php'>";
+                             } 
+                        ?>
  
 </body>
 </html>
