@@ -2,27 +2,16 @@
 
 session_start();
 include_once("detalleCollector.php");
-
-include_once("../Plato/platoCollector.php");
-
 $usuario = $_SESSION['torres'];
 $id_plato = $_POST['id_plato'];
 $id_pedido = $_POST['id_pedido'];
 $nombre = $_POST['nombre'];
 
 $cantidad = $_POST['cantidad'];
-
+$precio = $_POST['precio'];
 
 $DemoCollectorObj = new detalleCollector;
-$PlatoCollectorObj = new platoCollector();
 
-
-foreach ($PlatoCollectorObj->showplatos() as $c){
-      if($id_plato=$c->getid_plato()) {
-          $precio = $c->getprecio();
-      }               
-    
- }
 
 $total2 = $cantidad *$precio;
 
@@ -44,11 +33,8 @@ $total2 = $cantidad *$precio;
         <?php
          
         $totalVenta  =  $cantidad*$cantidad;
-        $DemoCollectorObj->createpedido($id_plato,$id_pedido,$nombre,$cantidad,$precio,$total2);
-        $mensaje = "EL detalle del pedido se grabo correctamente";
-        
-            print "<script>alert('$mensaje')</script>";
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readpedido.php?rol=A'>";   
+        $DemoCollectorObj->createpedido($id_plato,$id_pedido,$nombre,$cantidad,$precio,$totalVenta);
+        $mensaje = "EL pedido se grabo correctamente";
         
         ?>
   
@@ -57,6 +43,13 @@ $total2 = $cantidad *$precio;
     
     </head>
     <body>
+  
+    
+        
+        
+  
+        
+      <a href="readpedido.php"> <button>VOLVER</button></a>
   
     </body>
 </html>

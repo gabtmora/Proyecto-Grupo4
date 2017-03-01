@@ -3,10 +3,14 @@ session_start();
 $rol = $_GET['rol'];
 include_once('detalleCollector.php');
 $DemoCollectorObj = new detalleCollector();
+
+$id =2;
+$rol = $_GET['rol'];
+echo "<p>Hola " . $_SESSION['torres'] . "</p>";
 ?>
 
 
-<!doctype html>
+<html>
 
 	<head>
 		<?php include_once('../../../css/fuente_google.html');?>
@@ -19,23 +23,18 @@ $DemoCollectorObj = new detalleCollector();
         <meta charset="utf-8">
 	<title>Menu</title>
     <link rel="stylesheet" href="../../../css/estilotabla.css">
-    </head>
-    
-
-<body>
-    <header>
-        <h1>Administrador</h1>
+    <h1>Administrador</h1>
         <div class="usuario">
-        <?php
-        
-        
-         $id =2;
-         $rol = $_GET['rol'];
-         echo "<p>Hola " . $_SESSION['torres'] . "</p>";
+           <?php
+	    echo "<p>Hola" . $_SESSION['torres'] . "</p>";
 		    
         ?>
         </div>
-     </header>
+    </head>
+    
+
+
+  
 <body>
 	<div class="contenedorPrincipal">
     <?php
@@ -143,7 +142,7 @@ $DemoCollectorObj = new detalleCollector();
                 </form>
 			</div><!--contenedorForms-->
             <div class="centrar-texto centrar-div">
-            	<a href="../../../pages/admin.php?rol=$rol" style="color:blue">Menu principal</a> ||  
+            	<a href="../../admin.php?rol=$rol" style="color:blue">Menu principal</a> ||  
            
             	<a href='logout.php' style="color:blue">Salir</a>
             </div>
@@ -186,8 +185,7 @@ $DemoCollectorObj = new detalleCollector();
                     }
                 }
                 
-                include_once('detalleCollector.php');
-                $DemoCollectorObj = new detalleCollector();
+             
                 var_dump(isset($_POST['buscar']));
                 if(isset($_POST['buscar'])){//BUSCAR
                 	echo "entro a buscar";

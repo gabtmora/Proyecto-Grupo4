@@ -1,22 +1,18 @@
 
 <?php
 include_once("detalleCollector.php");
-include_once("../Plato/platoCollector.php");
-include_once("../pedido/PedidoCollector.php");
-
+$usuario = $_SESSION['torres'];
 $id =1;
 
 session_start();
 $DemoCollectorObj = new detalleCollector();
-$PlatoCollectorObj = new platoCollector();
-$PedidoCollectorObj = new PedidoCollector();
 
 ?>
 
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Crear Pedido </title>
+	<title>Usuario </title>
     <link rel="stylesheet" href="../../../css/bootstrap.css">
     <link rel="stylesheet" href="../../../css/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -26,7 +22,7 @@ $PedidoCollectorObj = new PedidoCollector();
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="readpedido.php"><h2>REGISTRO DE PEDIDO</h2></a>
+    <a href="../index.html"><h2>REGISTRO DE Pedido</h2></a>
   </div>
 
   <div class="register-box-body">
@@ -36,28 +32,13 @@ $PedidoCollectorObj = new PedidoCollector();
 
 
     <form action="savepedido.php" method="post">
-    
+  
       <div class="form-group has-feedback">
-           <label>Id_Plato</label>
-           <?php
-                     echo "<select name='id_plato'>";
-                     foreach ($PlatoCollectorObj->showplatos() as $c){
-                        echo "<option>". $c->getid_plato()."</option>";
-                     }
-                     echo "</select>";
-                    ?>
-       
+        <input  name="id_plato" class="form-control" placeholder="plato">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
         <div class="form-group has-feedback">
-         <label>Id_Pedido</label>
-           <?php
-                     echo "<select name='id_pedido'>";
-                     foreach ($PedidoCollectorObj->showPedidos() as $c){
-                        echo "<option>". $c->getId_pedido()."</option>";
-                     }
-                     echo "</select>";
-                    ?>
+        <input type="text" name ="id_pedido"  placeholder="pedido">
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
         <div class="form-group has-feedback">
@@ -69,6 +50,11 @@ $PedidoCollectorObj = new PedidoCollector();
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       
+       <div class="form-group has-feedback">
+        <input  name="precio" class="form-control" placeholder="precio">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+     
   
  
    
