@@ -3,14 +3,10 @@ session_start();
 $rol = $_GET['rol'];
 include_once('detalleCollector.php');
 $DemoCollectorObj = new detalleCollector();
-
-$id =2;
-$rol = $_GET['rol'];
-echo "<p>Hola " . $_SESSION['torres'] . "</p>";
 ?>
 
 
-<html>
+<!doctype html>
 
 	<head>
 		<?php include_once('../../../css/fuente_google.html');?>
@@ -23,18 +19,23 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
         <meta charset="utf-8">
 	<title>Menu</title>
     <link rel="stylesheet" href="../../../css/estilotabla.css">
-    <h1>Administrador</h1>
-        <div class="usuario">
-           <?php
-	    echo "<p>Hola" . $_SESSION['torres'] . "</p>";
-		    
-        ?>
-        </div>
     </head>
     
 
-
-  
+<body>
+    <header>
+        <h1>Administrador</h1>
+        <div class="usuario">
+        <?php
+        
+        
+         $id =2;
+         $rol = $_GET['rol'];
+         echo "<p>Hola " . $_SESSION['torres'] . "</p>";
+		    
+        ?>
+        </div>
+     </header>
 <body>
 	<div class="contenedorPrincipal">
     <?php
@@ -142,7 +143,7 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                 </form>
 			</div><!--contenedorForms-->
             <div class="centrar-texto centrar-div">
-            	<a href="../../admin.php?rol=$rol" style="color:blue">Menu principal</a> ||  
+            	<a href="../../../pages/admin.php?rol=$rol" style="color:blue">Menu principal</a> ||  
            
             	<a href='logout.php' style="color:blue">Salir</a>
             </div>
@@ -185,7 +186,8 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                     }
                 }
                 
-             
+                include_once('detalleCollector.php');
+                $DemoCollectorObj = new detalleCollector();
                 var_dump(isset($_POST['buscar']));
                 if(isset($_POST['buscar'])){//BUSCAR
                 	echo "entro a buscar";
@@ -200,10 +202,9 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                     	//$busqueda=limpiar($con,$busqueda);
                     	echo " entro a buscarggggg ";
                         $buscar=$DemoCollectorObj->consulta($busqueda);
-                        $_SESSION['ojo'] =$buscar;
                         echo " paso ";
                         var_dump($buscar);
-                        var_dump( $_SESSION['ojo']);
+                        //var_dump($buscar);
                         $num=count($buscar);
                         var_dump($num);
                         //$num=mysqli_num_rows($buscar);
@@ -227,10 +228,7 @@ echo "<p>Hola " . $_SESSION['torres'] . "</p>";
                                 
                                 
                               
-                <?php       
-                
-                $buscar=$_SESSION['ojo'];
-                var_dump ($buscar);
+                <?php             
                           foreach ($buscar as $c){
                                         echo "<tr>
                                                 <td>".$c->getid_plato()."</td>

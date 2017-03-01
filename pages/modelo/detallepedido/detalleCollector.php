@@ -1,8 +1,8 @@
 <?php
 
-include_once('../plato/plato.php');
+include_once('../Plato/plato.php');
 include_once('../collector.php');
-include_once('pedido.php');
+include_once('detpedido.php');
 
 class detalleCollector extends collector
 {
@@ -14,14 +14,14 @@ class detalleCollector extends collector
   	$error="<div class='error'>Error al buscar el producto</div>";
   	$arrayplato= array();
    $consulta= self::$db->getRows($sql);
-  	var_dump ($consulta);	
+  		
   	 	
   	foreach ($consulta as $c){
   		$aux = new plato($c{'id_plato'},$c{'descripcion'},$c{'precio'},$c{'estado'},$c{'tipo_plato'});
   	
   	  		array_push($arrayplato, $aux);
-  	} 
-  	return $consulta;
+  	}
+  	return $arrayplato;
   	
 
  
@@ -50,7 +50,7 @@ class detalleCollector extends collector
   	##echo "linea 1";
   	$arraymenu= array();
   	foreach ($rows as $c){
-  		$aux = new pedido($c{'id_detalle'},$c{'id_plato'},$c{'id_pedido'},$c{'descripcion'},$c{'cantidad'},$c{'precio'},$c{'total'});
+  		$aux = new detpedido($c{'id_detalle'},$c{'id_plato'},$c{'id_pedido'},$c{'descripcion'},$c{'cantidad'},$c{'precio'},$c{'total'});
 
   
   
@@ -70,9 +70,9 @@ class detalleCollector extends collector
    
 
     
-    function updatepedido($id_detalle,$cantidad,$precio,$total2) {
+    function updatepedido($id_detalle,$id_plato,$nombre,$id_pedido,$cantidad,$precio,$total2) {
         $rows = self::$db->updateRow("UPDATE detalle_pedido SET cantidad=$cantidad,
-        precio=$precio, total=$total2  WHERE id_detalle=$id_detalle",null);
+        precio=$precio, total=$total2, id_plato=$id_plato,descripcion='$nombre', id_pedido=$id_pedido  WHERE id_detalle=$id_detalle",null);
         
     }
     

@@ -49,11 +49,11 @@ $DemoCollectorObj = new detalleCollector;
         <tr>    
             <th>id_detalle</th>
             <th>id_plato</th>
-	     <th>id_Menu</th>
+            <th>id_pedido</th>
             <th>descripcion</th>
             <th>cantidad</th>
             <th>precio</th>
-             <th>total</th>
+              <th>total</th>
               
             
         </tr>
@@ -79,7 +79,7 @@ $DemoCollectorObj = new detalleCollector;
             
                 
         }
-  	    echo "<a href='../../admin.php'><button>SALIR</button></a>";
+  	    echo "<a href='../../admin.php?rol=A'><button>SALIR</button></a>";
 
         ?>
 
