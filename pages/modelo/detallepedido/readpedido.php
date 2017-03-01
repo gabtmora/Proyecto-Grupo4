@@ -49,10 +49,11 @@ $DemoCollectorObj = new detalleCollector;
         <tr>    
             <th>id_detalle</th>
             <th>id_plato</th>
+	     <th>id_Menu</th>
             <th>descripcion</th>
             <th>cantidad</th>
             <th>precio</th>
-              <th>total</th>
+             <th>total</th>
               
             
         </tr>
@@ -62,7 +63,6 @@ $DemoCollectorObj = new detalleCollector;
             echo "<tr>";
             echo "<td>" . $c->getid_detalle() . "</td>";                       
 	    echo "<td>" . $c->getid_plato() . "</td>"; 
-	    echo "<td>" . $c->getid_plato() . "</td>";
 	    echo "<td>" . $c->getid_pedido() . "</td>";
 	    echo "<td>" . $c->getdescripcion() . "</td>";
 	    echo "<td>" . $c->getcantidad() . "</td>";
