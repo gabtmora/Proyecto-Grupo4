@@ -9,7 +9,7 @@ before_install:
 - sudo apt-get update -q
 - sudo apt-get install ruby-full -y
 - gem install sass
-- chmod + x install-dependencies.sh
+- chmod 777 install-dependencies.sh
 install: ./install-dependencies.sh
 
 before_script: true
