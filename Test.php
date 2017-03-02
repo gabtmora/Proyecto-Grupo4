@@ -1,5 +1,5 @@
 <?php
-include_once('/pages/modelo/Plato/platoCollector.php');
+include_once('/home/travis/build/gabtmora/Proyecto-Grupo4/pages/modelo/Plato/platoCollector.php');
 
 class Test extends PHPUnit_Framework_TestCase
 {
