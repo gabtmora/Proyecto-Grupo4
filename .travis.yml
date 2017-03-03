@@ -12,7 +12,10 @@ before_install:
 before_script: true
 
 script: 
-- phpunit Tests/*
+- phpunit Tests/UsuarioTest1.php
+- phpunit Tests/PlatoTest.php
+- phpunit Tests/PedidoTest.php
+- phpunit Tests/MenuTest.php
 
 
 
