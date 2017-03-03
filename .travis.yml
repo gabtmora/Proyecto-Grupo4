@@ -12,7 +12,7 @@ before_install:
 before_script: true
 
 script: 
-- phpunit Tests
+- phpunit Tests/*
 
 
 
